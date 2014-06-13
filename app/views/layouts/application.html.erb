@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>ContactsFrontend</title>
-  <%= stylesheet_link_tag    'application', media: 'all' %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title><%= yield :title %> - GOV.UK</title>
+    <%= yield :head %>
+  </head>
 
-<%= yield %>
-
-</body>
+  <body class="<%= yield :body_classes %>">
+    <div id="wrapper" class="<%= yield :wrapper_classes %>">
+      <%= yield %>
+    </div>
+  </body>
 </html>
