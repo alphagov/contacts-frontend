@@ -5,7 +5,7 @@ gem 'rails', '4.1.1'
 
 gem 'uglifier', '>= 1.3.0'
 
-
+gem 'airbrake', '4.0.0'
 gem 'logstasher', '0.5.3'
 
 gem 'spring',      group: :development
