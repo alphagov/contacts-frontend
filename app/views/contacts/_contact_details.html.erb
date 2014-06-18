@@ -1,0 +1,35 @@
+<% if contact.contact_form_links.any? %>
+  <div class="online-forms">
+    <h2>Online forms</h2>
+    <ul class="form-links">
+      <%= render partial: "contact_form_link", collection: contact.contact_form_links %>
+    </ul>
+    <%= contact.more_info_contact_form %>
+  </div>
+<% end -%>
+
+<% if contact.email_addresses.any? %>
+  <h2 class="details-header">Email</h2>
+  <div class="details">
+    <p class="description"><%= contact.more_info_email_address.to_s %></p>
+    <ul class="email">
+      <%= render partial: "email_address", collection: contact.email_addresses %>
+    </ul>
+  </div>
+<% end %>
+
+<% if contact.phone_numbers.any? %>
+  <h2 class="details-header">Phone</h2>
+  <div class="details">
+    <%= render partial: "phone_number", collection: contact.phone_numbers %>
+  </div>
+<% end %>
+
+<% if contact.post_addresses.any? %>
+  <h2 class="details-header">Post</h2>
+  <div class="details">
+    <%= render partial: "post_address", collection: contact.post_addresses %>
+    <%= contact.more_info_post_address %>
+  </div>
+<% end %>
+
