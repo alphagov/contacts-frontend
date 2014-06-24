@@ -1,0 +1,26 @@
+.contacts-wrapper {
+  font-family: $NTA-Light;
+  position: relative;
+  overflow: visible;
+  margin: 0 auto;
+  padding-top: 0;
+  padding-bottom: $gutter;
+  background: transparent;
+  color: $text-colour;
+  border-bottom: $gutter-one-third solid $govuk-blue;
+
+  @include media(desktop) {
+    padding-bottom: $gutter*2;
+  }
+
+  .contacts-content {
+    display: block;
+    position: relative;
+    margin: 0 auto;
+    width: auto;
+    max-width: $max-site-width + $gutter*2;
+
+    @extend %contain-floats;
+  }
+
+}
