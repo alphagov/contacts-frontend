@@ -34,18 +34,24 @@
   </ul>
 
   <% if phone_number.description.present? %>
-    <%= raw phone_number.description %>
+    <div class="description govspeak">
+      <%= raw phone_number.description %>
+    </div>
   <% end %>
 
   <p class="call-charges"><%= link_to "Find out about call charges", "https://www.gov.uk/call-charges" %></p>
 
   <% if phone_number.open_hours.present? %>
     <h4>Opening times:</h4>
-    <%= raw phone_number.open_hours %>
+    <div class="govspeak">
+      <%= raw phone_number.open_hours %>
+    </div>
   <% end %>
 
   <% if phone_number.best_time_to_call.present? %>
     <h4>Best time to call:</h4>
-    <%= raw phone_number.best_time_to_call %>
+    <div class="govspeak">
+      <%= raw phone_number.best_time_to_call %>
+    </div>
   <% end %>
 </div>

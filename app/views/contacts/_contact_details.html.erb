@@ -4,7 +4,9 @@
     <ul class="form-links">
       <%= render partial: "contact_form_link", collection: contact.contact_form_links %>
     </ul>
-    <%= contact.more_info_contact_form %>
+    <div class="govspeak">
+      <%= raw contact.more_info_contact_form %>
+    </div>
   </div>
 <% end -%>
 
@@ -29,7 +31,9 @@
   <h2 class="details-header">Post</h2>
   <div class="details">
     <%= render partial: "post_address", collection: contact.post_addresses %>
-    <%= contact.more_info_post_address %>
+    <div class="govspeak">
+      <%= raw contact.more_info_post_address %>
+    </div>
   </div>
 <% end %>
 
