@@ -21,7 +21,7 @@ else
     gem 'gds-api-adapters', '11.0.0'
 end
 
-gem 'govuk_frontend_toolkit', "0.46.1"
+gem 'govuk_frontend_toolkit', "1.3.0"
 
 group :development, :test do
   gem 'rspec-rails', '2.14.2'

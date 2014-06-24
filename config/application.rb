@@ -29,7 +29,14 @@ module ContactsFrontend
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
 
-    config.assets.prefix = 'contacts-frontend'
+    config.assets.prefix = '/contacts-frontend'
+
+    config.assets.precompile += %w(
+      application.css
+      application-ie6.css
+      application-ie7.css
+      application-ie8.css
+    )
 
     # Disable rack::cache
     config.action_dispatch.rack_cache = nil

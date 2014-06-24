@@ -4,7 +4,9 @@
     <p><%= mail_to email_address.email %></p>
     <% if email_address.description.present? %>
       <div class="email-description">
-        <%= email_address.description %>
+        <div class="govspeak">
+          <%= raw email_address.description %>
+        </div>
       </div>
     <% end %>
   </div>

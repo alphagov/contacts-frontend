@@ -2,10 +2,14 @@
 <html>
 <head>
   <title><%= organisation.title %> contacts - GOV.UK</title>
+    <!--[if gt IE 8]><!--><%= stylesheet_link_tag "application.css" %><!--<![endif]-->
+    <!--[if IE 6]><%= stylesheet_link_tag "application-ie6.css" %><![endif]-->
+    <!--[if IE 7]><%= stylesheet_link_tag "application-ie7.css" %><![endif]-->
+    <!--[if IE 8]><%= stylesheet_link_tag "application-ie8.css" %><![endif]-->
   <%= csrf_meta_tags %>
 </head>
-<body class="hmrc-contacts-body">
-<% unless local_assigns[:show_breadcrumbs] %>
+<body class="contacts-body">
+
 <div id="global-breadcrumb" class="header-context group">
   <ol role="breadcrumbs" class="group">
     <li>
@@ -16,18 +20,18 @@
     </li>
     <% if params[:action] == "show" %>
       <li>
-        <%= link_to "Contact #{organisation.abbreviation_or_title}", "/contact/#{organisation.slug}" %>
+        <%= link_to "Contact #{organisation.abbreviation}", "/contact/#{organisation.slug}" %>
       </li>
     <% end %>
   </ol>
 </div>
-<% end %>
-<div id="wrapper">
-  <div class="hmrc-contacts-content">
+
+<div id="wrapper" class="contacts-wrapper">
+  <div class="contacts-content">
     <div id="page" class="<%= content_for?(:page_class) ? yield(:page_class) : '' %>" >
       <%= yield %>
-      <div id="report-a-problem"></div>
     </div>
+    <div id="report-a-problem"></div>
   </div>
 </div>
 
