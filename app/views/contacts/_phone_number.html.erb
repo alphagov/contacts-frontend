@@ -1,51 +1,51 @@
-<% if @contact.phone_numbers.size > 1 %>
-  <h4>
-    <%= phone_number.title %>
-  </h4>
-<% end -%>
+<div class="phone-detail">
+  <% if @contact.phone_numbers.size > 1 %>
+    <h3>
+      <%= phone_number.title %>
+    </h3>
+  <% end -%>
 
-<ul class="phone-list">
-  <li>
-    <span class="type">Telephone: </span>
-    <span class="value"><%= phone_number.number %></span>
-  </li>
-
-  <% if phone_number.textphone.present? %>
+  <ul class="phone-list">
     <li>
-      <span class="type">Textphone: </span>
-      <span class="value"><%= phone_number.textphone %></span>
+      <span class="type">Telephone: </span>
+      <span class="value"><%= phone_number.number %></span>
     </li>
-  <% end %>
 
-  <% if phone_number.international_phone.present? %>
-    <li>
-      <span class="type">Outside UK: </span>
-      <span class="value"><%= phone_number.international_phone %></span>
-    </li>
-  <% end %>
+    <% if phone_number.textphone.present? %>
+      <li>
+        <span class="type">Textphone: </span>
+        <span class="value"><%= phone_number.textphone %></span>
+      </li>
+    <% end %>
 
-  <% if phone_number.fax.present? %>
-    <li>
-      <span class="type">Fax: </span>
-      <span class="value"><%= phone_number.fax %></span>
-    </li>
-  <% end %>
-</ul>
+    <% if phone_number.international_phone.present? %>
+      <li>
+        <span class="type">Outside UK: </span>
+        <span class="value"><%= phone_number.international_phone %></span>
+      </li>
+    <% end %>
 
-<% if phone_number.description.present? %>
-  <div class="description">
+    <% if phone_number.fax.present? %>
+      <li>
+        <span class="type">Fax: </span>
+        <span class="value"><%= phone_number.fax %></span>
+      </li>
+    <% end %>
+  </ul>
+
+  <% if phone_number.description.present? %>
     <%= raw phone_number.description %>
-  </div>
-<% end %>
+  <% end %>
 
-<p><%= link_to "Find out about call charges", "https://www.gov.uk/call-charges", class: "link-underline" %></p>
+  <p class="call-charges"><%= link_to "Find out about call charges", "https://www.gov.uk/call-charges" %></p>
 
-<% if phone_number.open_hours.present? %>
-  <p class="times">Opening times:</p>
-  <%= raw phone_number.open_hours %>
-<% end %>
+  <% if phone_number.open_hours.present? %>
+    <h4>Opening times:</h4>
+    <%= raw phone_number.open_hours %>
+  <% end %>
 
-<% if phone_number.best_time_to_call.present? %>
-  <p class="times">Best time to call:</p>
-  <%= raw phone_number.best_time_to_call %>
-<% end %>
+  <% if phone_number.best_time_to_call.present? %>
+    <h4>Best time to call:</h4>
+    <%= raw phone_number.best_time_to_call %>
+  <% end %>
+</div>
