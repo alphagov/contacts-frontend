@@ -4,6 +4,7 @@ require 'gds_api/content_store'
 class ContactsController < ApplicationController
   include GdsApi::Helpers
 
+  before_filter :set_expiry, only: :show
   before_filter :set_beta_notice, only: :show
   helper_method :organisation
 

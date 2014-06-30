@@ -12,5 +12,6 @@ describe "Show contact page" do
   it "displays contact details under relevant path" do
     visit(path)
     expect(page).to have_content(contact_data["title"])
+    expect(page.response_headers["Cache-Control"]).to eq("max-age=1800, public")
   end
 end
