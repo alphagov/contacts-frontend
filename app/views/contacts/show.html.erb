@@ -1,4 +1,12 @@
 <% content_for :page_class, 'contacts-show' %>
+<% content_for :breadcrumbs do %>
+  <li>
+    <%= link_to organisation.title, "/government/organisations/#{organisation.slug}" %>
+  </li>
+  <li>
+    <%= link_to "Contact #{organisation.abbreviation}", calculate_contacts_index_path(organisation) %>
+  </li>
+<% end %>
 
 <header class="header-block">
   <div class="heading">
