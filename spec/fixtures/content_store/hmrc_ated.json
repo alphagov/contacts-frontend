@@ -1,0 +1,101 @@
+{
+  "base_path": "/government/organisations/hm-revenue-customs/contact/annual-tax-on-enveloped-dwellings-ated",
+  "title": "Annual Tax on Enveloped Dwellings",
+  "description": "Help about ATED (previously called Annual Residential Property Tax), who needs to submit a return and how to make a payment",
+  "format": "contact",
+  "need_ids": [
+
+  ],
+  "updated_at": null,
+  "public_updated_at": "2014-04-03T14:53:09+00:00",
+  "details": {
+    "slug": "annual-tax-on-enveloped-dwellings-ated",
+    "title": "Annual Tax on Enveloped Dwellings",
+    "description": "Help about ATED (previously called Annual Residential Property Tax), who needs to submit a return and how to make a payment",
+    "organisation": {
+      "id": 1,
+      "title": "HM Revenue & Customs",
+      "format": "Non-ministerial department",
+      "slug": "hm-revenue-customs",
+      "abbreviation": "HMRC",
+      "govuk_status": "live"
+    },
+    "quick_links": [
+      {
+        "title": "Annual Tax on Enveloped Dwellings ",
+        "url": "http://www.hmrc.gov.uk/ated/index.htm"
+      }
+    ],
+    "query_response_time": false,
+    "contact_groups": [
+      {
+        "title": "Stamp Taxes ",
+        "organisation": {
+          "id": 1,
+          "title": "HM Revenue & Customs",
+          "format": "Non-ministerial department",
+          "slug": "hm-revenue-customs",
+          "abbreviation": "HMRC",
+          "govuk_status": "live"
+        },
+        "description": "<p>Stamp taxes payable on land and property</p>",
+        "contacts": [
+          {
+            "description": "<p>Online form and telephone number for ordering Stamp Duty Land Tax forms and payslips</p>"
+          },
+          {
+            "description": "<p>Address and phone number for enquiries about stamp taxes payable on land and property and Stamp Duty Reserve Tax </p>"
+          },
+          {
+            "description": "<p>Address and phone numbers for Stamp Duty enquiries about shares and land</p>"
+          },
+          {
+            "description": "<p>Information for solicitors dealing with Scottish land transactions</p>"
+          },
+          {
+            "description": "<p>Telephone number for technical help with filing stamp tax returns online</p>"
+          },
+          {
+            "description": "<p>Addresses for posting payments, returns and writing to HMRC regarding Stamp Duty Land Tax</p>"
+          },
+          {
+            "description": "<p>Help about ATED (previously called Annual Residential Property Tax), who needs to submit a return and how to make a payment</p>"
+          }
+        ]
+      }
+    ],
+    "contact_form_links": [
+
+    ],
+    "more_info_contact_form": "",
+    "email_addresses": [
+
+    ],
+    "more_info_email_address": "",
+    "phone_numbers": [
+      {
+        "title": "Annual Tax on Enveloped Dwellings Helpline",
+        "number": "0300 200 3510",
+        "textphone": "",
+        "international_phone": "+44 1726 209 042",
+        "fax": "03000 570 316",
+        "description": "",
+        "open_hours": "<p>8.30am to 5pm, Monday to Friday</p>\n\n<p>Closed weekends and bank holidays</p>",
+        "best_time_to_call": ""
+      }
+    ],
+    "post_addresses": [
+      {
+        "title": "HM Revenue and Customs - Annual Tax on Enveloped Dwellings Team",
+        "street_address": "Policy Room 3E/07",
+        "postal_code": "SW1A 2BQ",
+        "world_location": "United Kingdom",
+        "locality": "100 Parliament Street ",
+        "region": "London",
+        "description": ""
+      }
+    ],
+    "more_info_post_address": "",
+    "language": "en"
+  }
+}

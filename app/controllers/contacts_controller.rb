@@ -9,9 +9,8 @@ class ContactsController < ApplicationController
   helper_method :organisation
 
   def show
-    path = "/#{APP_SLUG}/#{params[:organisation]}/#{params[:id]}"
-    obj = content_store.content_item(path)
-    render :status => 404 unless obj
+    obj = content_store.content_item(request.path)
+    error_404 and return unless obj
     @contact = ContactPresenter.new(obj)
   end
 

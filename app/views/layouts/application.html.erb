@@ -15,14 +15,7 @@
     <li>
       <%= link_to "Home", '/' %>
     </li>
-    <li>
-      <%= link_to organisation.title, "/government/organisations/#{organisation.slug}" %>
-    </li>
-    <% if params[:action] == "show" %>
-      <li>
-        <%= link_to "Contact #{organisation.abbreviation}", "/contact/#{organisation.slug}" %>
-      </li>
-    <% end %>
+    <%= yield :breadcrumbs %>
   </ol>
 </div>
 
