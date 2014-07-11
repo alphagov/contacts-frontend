@@ -4,7 +4,7 @@
     <%= link_to organisation.title, "/government/organisations/#{organisation.slug}" %>
   </li>
   <li>
-    <%= link_to "Contact #{organisation.abbreviation}", calculate_contacts_index_path(organisation) %>
+    <%= link_to "Contact #{organisation.abbreviation}", "/government/organisations/#{organisation.slug}/contact" %>
   </li>
 <% end %>
 
