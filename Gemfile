@@ -18,7 +18,7 @@ gem 'spring',      group: :development
 if ENV['API_DEV']
     gem 'gds-api-adapters', :path => '../gds-api-adapters'
 else
-    gem 'gds-api-adapters', '11.4.0'
+    gem 'gds-api-adapters', '12.2.0'
 end
 
 gem 'govuk_frontend_toolkit', "1.3.0"
