@@ -10,7 +10,8 @@ feature "Showing a contact page" do
     visit(path)
 
     expect(page).to have_content("Annual Tax on Enveloped Dwellings")
-    expect(page.response_headers["Cache-Control"]).to eq("max-age=1800, public")
+    expect(page.response_headers["Cache-Control"]).to eq("public")
+    expect(page.response_headers["Expires"]).to eq(content_item_cache_expiry_headers["Expires"])
     expect_breadcrumb_links({
       "Home" => "/",
       "HM Revenue & Customs" => "/government/organisations/hm-revenue-customs",
@@ -35,7 +36,8 @@ feature "Showing a contact page" do
     visit(path)
 
     expect(page).to have_content("Annual Tax on Enveloped Dwellings")
-    expect(page.response_headers["Cache-Control"]).to eq("max-age=1800, public")
+    expect(page.response_headers["Cache-Control"]).to eq("public")
+    expect(page.response_headers["Expires"]).to eq(content_item_cache_expiry_headers['Expires'])
     expect_breadcrumb_links({
       "Home" => "/",
       "HM Revenue & Customs" => "/government/organisations/hm-revenue-customs",

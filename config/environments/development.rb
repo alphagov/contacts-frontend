@@ -35,4 +35,8 @@ Rails.application.configure do
   if ENV['GOVUK_ASSET_ROOT'].present?
     config.action_controller.asset_host = ENV['GOVUK_ASSET_ROOT']
   end
+
+  # Caching
+  config.cache_control_directive = 'no-cache'
+
 end

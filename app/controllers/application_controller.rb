@@ -15,9 +15,9 @@ class ApplicationController < ActionController::Base
     render status: status_code, text: "#{status_code} error"
   end
 
-  def set_expiry(duration = 30.minutes)
-    unless Rails.env.development?
-      expires_in(duration, :public => true)
-    end
+  def expires_at(expiration_time = ContactsFrontend::Application.config.default_ttl.from_now)
+    response.headers['Cache-Control'] = ContactsFrontend::Application.config.cache_control_directive
+    response.headers['Expires'] = expiration_time.respond_to?(:httpdate) ? expiration_time.httpdate : expiration_time
   end
+
 end
