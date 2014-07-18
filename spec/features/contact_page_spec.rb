@@ -5,12 +5,12 @@ feature "Showing a contact page" do
   it "renders a contact page" do
     path = '/government/organisations/hm-revenue-customs/contact/annual-tax-on-enveloped-dwellings-ated'
 
-    content_store_has_item(path, read_content_store_fixture('hmrc_ated'))
+    content_store_has_item(path, read_content_store_fixture('hmrc_ated'), 15.minutes.to_i)
 
     visit(path)
 
     expect(page).to have_content("Annual Tax on Enveloped Dwellings")
-    expect(page.response_headers["Cache-Control"]).to eq("max-age=1800, public")
+    expect(page.response_headers["Cache-Control"]).to eq("max-age=900, public")
     expect_breadcrumb_links({
       "Home" => "/",
       "HM Revenue & Customs" => "/government/organisations/hm-revenue-customs",

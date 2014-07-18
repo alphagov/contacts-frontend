@@ -38,5 +38,9 @@ module ContactsFrontend
 
     # Disable rack::cache
     config.action_dispatch.rack_cache = nil
+
+    # Caching
+    config.cache_control_directive = 'public'
+    config.default_max_age = 30.minutes
   end
 end
