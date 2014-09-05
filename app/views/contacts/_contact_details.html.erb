@@ -24,7 +24,10 @@
   <h2 class="details-header">Phone</h2>
   <div class="details">
     <%= render partial: "phone_number", collection: contact.phone_numbers %>
-  </div>
+  <div class="govspeak">
+      <%= raw contact.more_info_phone_number %>
+    </div>
+    </div>
 <% end %>
 
 <% if contact.post_addresses.any? %>
