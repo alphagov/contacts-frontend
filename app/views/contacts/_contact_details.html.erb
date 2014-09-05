@@ -13,10 +13,12 @@
 <% if contact.email_addresses.any? %>
   <h2 class="details-header">Email</h2>
   <div class="details">
-    <p class="description"><%= contact.more_info_email_address.to_s %></p>
     <ul class="email">
       <%= render partial: "email_address", collection: contact.email_addresses %>
     </ul>
+    <div class="govspeak">
+      <%= raw contact.more_info_email_address.to_s %>
+    </div>
   </div>
 <% end %>
 
@@ -27,7 +29,7 @@
   <div class="govspeak">
       <%= raw contact.more_info_phone_number %>
     </div>
-    </div>
+  </div>
 <% end %>
 
 <% if contact.post_addresses.any? %>
