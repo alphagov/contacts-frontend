@@ -13,8 +13,8 @@
 
 $max-site-width: 960px;
 
-@import "helpers/_govspeak.scss";
-
 @import "views/_layout.scss";
 @import "views/_contact-show.scss";
+
+@import "helpers/_govspeak.scss";
 
