@@ -1,3 +1,10 @@
 <li class="vcard">
   <%= link_to contact_form_link.title, contact_form_link.link, rel: 'external', class:'url fn link-underline' %>
+  <% if contact_form_link.description.present? %>
+    <div class="email-description">
+      <div class="govspeak">
+        <%= raw contact_form_link.description %>
+      </div>
+    </div>
+  <% end %>
 </li>
