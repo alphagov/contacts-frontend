@@ -20,12 +20,15 @@
       "abbreviation": "HMRC",
       "govuk_status": "live"
     },
-    "quick_links": [
-      {
-        "title": "Annual Tax on Enveloped Dwellings ",
-        "url": "http://www.hmrc.gov.uk/ated/index.htm"
-      }
-    ],
+    "links": {
+      "related" : [
+        {
+          "title": "Annual Tax on Enveloped Dwellings ",
+          "api_url": "http://www.hmrc.gov.uk/api/ated.json",
+          "web_url": "http://www.hmrc.gov.uk/ated/index.htm"
+        }
+      ]
+    },
     "query_response_time": false,
     "contact_groups": [
       {

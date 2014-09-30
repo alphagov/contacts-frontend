@@ -11,12 +11,12 @@ class ContactPresenter
   ]
 
   PASS_THROUGH_DETAILS_KEYS = [
-    :description, :organisation, :query_response_time,
+    :description, :organisation, :query_response_time, :links,
     :more_info_contact_form, :more_info_email_address, :more_info_post_address, :more_info_phone_number
   ]
 
   PASS_THROUGH_COLLECTIONS_KEYS = [
-    :quick_links, :phone_numbers, :email_addresses, :post_addresses,
+    :phone_numbers, :email_addresses, :post_addresses,
     :contact_form_links
   ]
 
@@ -50,6 +50,20 @@ class ContactPresenter
 
   def slug
     URI.parse(web_url).path.sub(%r{\A/}, "")
+  end
+  
+  def links
+    unless details and details.has_key?("links")
+      return OpenStruct.new(related:[])
+    end
+
+    OpenStruct.new(
+      Hash[
+        details["links"].map do |k,v| 
+          [k, v.map { |i| OpenStruct.new(i) }]
+        end
+      ]
+    )
   end
 
   def updated_at
