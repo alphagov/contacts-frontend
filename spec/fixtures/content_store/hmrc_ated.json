@@ -8,6 +8,20 @@
   ],
   "updated_at": null,
   "public_updated_at": "2014-04-03T14:53:09+00:00",
+  "links": {
+    "related" : [
+      {
+        "title": "Annual tax on enveloped dwellings contact",
+        "api_url": "http://www.hmrc.gov.uk/api/ated/contact.json",
+        "web_url": "http://www.hmrc.gov.uk/ated/contact.htm"
+      },
+      {
+        "title": "Another contact",
+        "api_url": "http://www.hmrc.gov.uk/api/ated/another.json",
+        "web_url": "http://www.hmrc.gov.uk/ated/another.htm"
+      }
+    ]
+  },
   "details": {
     "slug": "annual-tax-on-enveloped-dwellings-ated",
     "title": "Annual Tax on Enveloped Dwellings",

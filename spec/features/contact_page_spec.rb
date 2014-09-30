@@ -11,10 +11,15 @@ feature "Showing a contact page" do
 
     expect(page).to have_content("Annual Tax on Enveloped Dwellings")
     expect(page.response_headers["Cache-Control"]).to eq("max-age=900, public")
-    expect_breadcrumb_links({
+    expect_links("#global-breadcrumb", {
       "Home" => "/",
       "HM Revenue & Customs" => "/government/organisations/hm-revenue-customs",
       "Contact HMRC" => "/government/organisations/hm-revenue-customs/contact",
+    })
+    expect_links(".quick-links", {
+      "Annual Tax on Enveloped Dwellings" => "http://www.hmrc.gov.uk/ated/index.htm",
+      "Annual tax on enveloped dwellings contact" => "http://www.hmrc.gov.uk/ated/contact.htm",
+      "Another contact" => "http://www.hmrc.gov.uk/ated/another.htm"
     })
   end
 
@@ -27,8 +32,8 @@ feature "Showing a contact page" do
     expect(page.status_code).to eq(404)
   end
 
-  def expect_breadcrumb_links(links)
-    within "#global-breadcrumb" do
+  def expect_links(selector, links)
+    within selector do
       found_links = page.all("li a").map(&:text).map(&:strip)
       expect(found_links).to eq(links.keys)
 

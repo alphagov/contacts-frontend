@@ -168,9 +168,14 @@
 
   .quick-links {
     li {
+      padding: 5px 0 5px 0;
       a {
         @include core-16;
         font-weight: 700;
+        text-decoration: none;
+        &:hover {
+          text-decoration: underline;
+        }
       }
     }
 
