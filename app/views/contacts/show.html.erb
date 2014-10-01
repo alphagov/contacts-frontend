@@ -14,16 +14,16 @@
     <h1><%= @contact.title %></h1>
   </div>
 
-  <% if @contact.quick_links.any? %>
-    <aside class="heading-extra">
+  <% if @contact.links.related.any? %>
+    <nav class="heading-extra">
       <ul class="quick-links">
-        <% @contact.quick_links.each do |quick_link| %>
+        <% @contact.links.related.each do |link| %>
           <li>
-            <%= link_to quick_link.title, quick_link.url %>
+            <%= link_to link.title, link.web_url %>
           </li>
         <% end %>
       </ul>
-    </aside>
+    </nav>
   <% end %>
 </header>
 
