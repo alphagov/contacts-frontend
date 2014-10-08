@@ -52,6 +52,11 @@ class ContactPresenter
     URI.parse(web_url).path.sub(%r{\A/}, "")
   end
 
+  def related_links
+    return [] unless contact["links"]
+    contact["links"].fetch("related", []).map { |link| OpenStruct.new(link) }
+  end
+
   def updated_at
     date = @contact["updated_at"]
     DateTime.parse(date) if date
