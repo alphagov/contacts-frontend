@@ -51,17 +51,10 @@ class ContactPresenter
   def slug
     URI.parse(web_url).path.sub(%r{\A/}, "")
   end
-  
-  def links
-    return OpenStruct.new(related:[]) unless contact["links"]
 
-    OpenStruct.new(
-      Hash[
-        contact["links"].map do |k,v| 
-          [k, v.map { |i| OpenStruct.new(i) }]
-        end
-      ]
-    )
+  def related_links
+    return [] unless contact["links"]
+    contact["links"].fetch("related", []).map { |link| OpenStruct.new(link) }
   end
 
   def updated_at

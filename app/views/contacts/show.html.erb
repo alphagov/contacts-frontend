@@ -14,7 +14,7 @@
     <h1><%= @contact.title %></h1>
   </div>
 
-  <% if @contact.quick_links.any? or @contact.links.related.any? %>
+  <% if @contact.quick_links.any? or @contact.related_links.any? %>
     <nav class="heading-extra">
       <ul class="quick-links">
         <% @contact.quick_links.each do |link| -%>
@@ -22,7 +22,7 @@
             <%= link_to link.title, link.url %>
           </li>
         <% end -%>
-        <% @contact.links.related.each do |link| -%>
+        <% @contact.related_links.each do |link| -%>
           <li>
             <%= link_to link.title, link.web_url %>
           </li>

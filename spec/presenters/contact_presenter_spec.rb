@@ -9,16 +9,31 @@ describe ContactPresenter do
   end
 
   it "should access links elements directly" do
-    expect(contact.links.related.first.title).to eq("Annual tax on enveloped dwellings contact")
-    expect(contact.links.related.first.api_url).to eq("http://www.hmrc.gov.uk/api/ated/contact.json")
-    expect(contact.links.related.first.web_url).to eq("http://www.hmrc.gov.uk/ated/contact.htm")
+    expect(contact.related_links.first.title).to eq("Annual tax on enveloped dwellings contact")
+    expect(contact.related_links.first.api_url).to eq("http://www.hmrc.gov.uk/api/ated/contact.json")
+    expect(contact.related_links.first.web_url).to eq("http://www.hmrc.gov.uk/ated/contact.htm")
   end
 
   it "should handle the absence of links gracefully" do
     content_store_data = JSON.parse(read_content_store_fixture("hmrc_ated"))
     content_store_data.delete("links")
     presenter = ContactPresenter.new(content_store_data)
-    expect(presenter.links.related).to be_empty
+    expect(presenter.related_links).to be_empty
+  end
+
+  it "should handle an empty set of links gracefully" do
+    content_store_data = JSON.parse(read_content_store_fixture("hmrc_ated"))
+    content_store_data["links"] = {}
+    presenter = ContactPresenter.new(content_store_data)
+    expect(presenter.related_links).to be_empty
+  end
+
+  it "should handle a lack of related links gracefully" do
+    content_store_data = JSON.parse(read_content_store_fixture("hmrc_ated"))
+    # Checking for a non-empty set of links that doesn't include related
+    content_store_data["links"]["unrelated"] = content_store_data["links"].delete("related")
+    presenter = ContactPresenter.new(content_store_data)
+    expect(presenter.related_links).to be_empty
   end
 
   it "should convert collections to lists of OpenStructs" do
