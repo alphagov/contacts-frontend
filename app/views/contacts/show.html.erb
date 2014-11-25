@@ -10,26 +10,8 @@
 
 <header class="header-block">
   <div class="heading">
-    <p class="type">Contact details</p>
     <h1><%= @contact.title %></h1>
   </div>
-
-  <% if @contact.quick_links.any? or @contact.related_links.any? %>
-    <nav class="heading-extra">
-      <ul class="quick-links">
-        <% @contact.quick_links.each do |link| -%>
-          <li>
-            <%= link_to link.title, link.url %>
-          </li>
-        <% end -%>
-        <% @contact.related_links.each do |link| -%>
-          <li>
-            <%= link_to link.title, link.web_url %>
-          </li>
-        <% end -%>
-      </ul>
-    </nav>
-  <% end %>
 </header>
 
 <%= render "contact_details", contact: @contact %>
@@ -37,3 +19,32 @@
 <% if @contact.query_response_time %>
   <p class="response"><%= link_to "Find out when to expect a response to your query", "http://www.hmrc.gov.uk/tools/progress-tool/index.htm" %></p>
 <% end -%>
+
+<% if @contact.quick_links.any? or @contact.related_links.any? %>
+  <div class="related-positioning">
+    <div class="related-container">
+      <nav class="related">
+        <% if @contact.quick_links.any? %>
+          <h2 id="parent-subsection">Elsewhere on GOV.UK</h2>
+          <ul role="navigation" aria-labelledby="parent-subsection" class="quick-links">
+            <% @contact.quick_links.each do |link| -%>
+              <li>
+                <%= link_to link.title, link.url %>
+              </li>
+            <% end -%>
+          </ul>
+        <% end -%>
+        <% if @contact.related_links.any? %>
+          <h2 id="parent-subsection">Other contacts</h2>
+          <ul role="navigation" aria-labelledby="parent-subsection" class="related-links">
+            <% @contact.related_links.each do |link| -%>
+              <li>
+                <%= link_to link.title, link.web_url %>
+              </li>
+            <% end -%>
+          </ul>
+        <% end -%>
+      </nav>
+    </div>
+  </div>
+<% end %>

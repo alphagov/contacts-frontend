@@ -18,9 +18,11 @@ feature "Showing a contact page" do
     })
     expect_links(".quick-links", {
       "Annual Tax on Enveloped Dwellings" => "http://www.hmrc.gov.uk/ated/index.htm",
+    })
+    expect_links(".related-links", {
       "Annual tax on enveloped dwellings contact" => "http://www.hmrc.gov.uk/ated/contact.htm",
       "Another contact" => "http://www.hmrc.gov.uk/ated/another.htm"
-    })
+    })    
   end
 
   it "should 404 for a non-existent item in the content-store" do

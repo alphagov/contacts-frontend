@@ -24,11 +24,6 @@
         margin-bottom: 0  ;
       }
     }
-    .type {
-      @include core-27;
-      margin-bottom: $gutter/6;
-      color: $secondary-text-colour;
-    }
     .heading-extra {
       ul {
         padding-left: 0;
@@ -38,13 +33,29 @@
     @include media(tablet) {
       margin-bottom: $gutter;
 
-      .heading,
-      .heading-extra {
-        float: left;
+      .heading {
         width: $two-thirds;
       }
-      .heading-extra {
-        width: $one-third;
+    }
+  }
+
+  .related-positioning {
+    top: 0;
+    .related {
+      margin-top: 0;
+      padding: 0 0 $gutter 0;
+      top: 0;
+      right: $gutter;
+      @include media(tablet) {
+        width: $one-quarter;
+      }
+
+      h2 {
+        @include bold-24;
+        margin: $gutter-two-thirds 0 $gutter-one-third;
+      }
+      ul {
+        margin-bottom: $gutter;
       }
     }
   }
@@ -57,8 +68,7 @@
 
     &.details-header {
       @include media(tablet) {
-        float: left;
-        width: $one-quarter;
+        width: $two-thirds;
       }
     }
     @include media(tablet) {
@@ -68,11 +78,9 @@
 
   .details {
     margin-bottom: $gutter;
-
     @include media(tablet) {
-      float: left;
       margin-bottom: $gutter*2;
-      width: $three-quarters;
+      width: $two-thirds;
     }
 
     .times {
@@ -110,21 +118,14 @@
         @extend %contain-floats;
 
         li {
-          float: none;
           padding-bottom: $gutter-one-third;
           width: $full-width;
-
-          @include media(tablet) {
-            float: left;
-            width: $one-third;
-          }
 
           span {
             @include core-19;
             padding-right: $gutter-half;
 
             &.value {
-              display: block;
               font-weight: bold;
 
               a {
@@ -166,25 +167,6 @@
     }
   }
 
-  .quick-links {
-    li {
-      padding: 5px 0 5px 0;
-      a {
-        @include core-16;
-        font-weight: 700;
-        text-decoration: none;
-        &:hover {
-          text-decoration: underline;
-        }
-      }
-    }
-
-    @include media(tablet) {
-      margin-bottom: $gutter;
-    }
-  }
-
-
   .vcard {
     @include core-19;
     margin-bottom: $gutter;
@@ -199,6 +181,9 @@
     margin: $gutter 0;
     .beta {
       margin-left: 0;
+    }
+    @include media(tablet) {
+      width: $two-thirds;
     }
   }
 }
