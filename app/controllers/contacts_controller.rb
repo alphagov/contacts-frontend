@@ -4,7 +4,6 @@ require 'gds_api/content_store'
 class ContactsController < ApplicationController
   include GdsApi::Helpers
 
-  before_filter :set_beta_notice, only: :show
   helper_method :organisation
 
   def show
@@ -19,10 +18,6 @@ class ContactsController < ApplicationController
 
   def organisation
     @contact.organisation
-  end
-
-  def set_beta_notice
-    response.header[Slimmer::Headers::BETA_LABEL] = "after:.header-block"
   end
 
   def content_store
