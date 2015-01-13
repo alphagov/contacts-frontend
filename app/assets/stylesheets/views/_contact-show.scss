@@ -176,14 +176,12 @@
     }
   }
 
+  .beta-wrapper {
+    margin: 15px 0;
 
-  .beta-label {
-    margin: $gutter 0;
-    .beta {
-      margin-left: 0;
-    }
-    @include media(tablet) {
+    @include media(desktop) {
       width: $two-thirds;
+      margin: 30px 0;
     }
   }
 }
