@@ -32,31 +32,6 @@
 
     @include media(tablet) {
       margin-bottom: $gutter;
-
-      .heading {
-        width: $two-thirds;
-      }
-    }
-  }
-
-  .related-positioning {
-    top: 0;
-    .related {
-      margin-top: 0;
-      padding: 0 0 $gutter 0;
-      top: 0;
-      right: $gutter;
-      @include media(tablet) {
-        width: $one-quarter;
-      }
-
-      h2 {
-        @include bold-24;
-        margin: $gutter-two-thirds 0 $gutter-one-third;
-      }
-      ul {
-        margin-bottom: $gutter;
-      }
     }
   }
 
@@ -66,11 +41,6 @@
     font-weight: 700;
     margin: $gutter*1.5 0 $gutter-one-third;
 
-    &.details-header {
-      @include media(tablet) {
-        width: $two-thirds;
-      }
-    }
     @include media(tablet) {
       margin: 0 0 $gutter;
     }
@@ -80,7 +50,6 @@
     margin-bottom: $gutter;
     @include media(tablet) {
       margin-bottom: $gutter*2;
-      width: $two-thirds;
     }
 
     .times {
@@ -180,7 +149,6 @@
     margin: 15px 0;
 
     @include media(desktop) {
-      width: $two-thirds;
       margin: 30px 0;
     }
   }
