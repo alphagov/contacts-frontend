@@ -1,4 +1,3 @@
-<% content_for :page_class, 'contact-show' %>
 <% content_for :breadcrumbs do %>
   <li>
     <%= link_to organisation.title, "/government/organisations/#{organisation.slug}" %>
@@ -8,47 +7,51 @@
   </li>
 <% end %>
 
-<header class="header-block">
-  <div class="heading">
-    <h1><%= @contact.title %></h1>
+<div class="grid-row">
+<main id="content" class="contact-show">
+  <header class="header-block">
+    <div class="heading">
+      <h1><%= @contact.title %></h1>
+    </div>
+  </header>
+
+  <div class="beta-wrapper">
+    <%= render 'govuk_component/beta_label' %>
   </div>
-</header>
 
-<div class="beta-wrapper">
-  <%= render 'govuk_component/beta_label' %>
-</div>
+  <%= render "contact_details", contact: @contact %>
 
-<%= render "contact_details", contact: @contact %>
-
-<% if @contact.query_response_time %>
-  <p class="response"><%= link_to "Find out when to expect a response to your query", "http://www.hmrc.gov.uk/tools/progress-tool/index.htm" %></p>
-<% end -%>
-
+  <% if @contact.query_response_time %>
+    <p class="response"><%= link_to "Find out when to expect a response to your query", "http://www.hmrc.gov.uk/tools/progress-tool/index.htm" %></p>
+  <% end -%>
+</main>
 <% if @contact.quick_links.any? or @contact.related_links.any? %>
-  <div class="related-positioning">
-    <div class="related-container">
-      <nav class="related">
-        <% if @contact.quick_links.any? %>
-          <h2 id="parent-subsection">Elsewhere on GOV.UK</h2>
-          <ul role="navigation" aria-labelledby="parent-subsection" class="quick-links">
+  <div class="related-container">
+    <div class="related" id="related">
+      <% if @contact.quick_links.any? %>
+        <h2 id="elsewhwere-on-govuk">Elsewhere on GOV.UK</h2>
+        <nav role="navigation" labeled-by="elsewhere-on-govuk">
+          <ul class="quick-links">
             <% @contact.quick_links.each do |link| -%>
               <li>
                 <%= link_to link.title, link.url %>
               </li>
             <% end -%>
           </ul>
-        <% end -%>
-        <% if @contact.related_links.any? %>
-          <h2 id="parent-subsection">Other contacts</h2>
-          <ul role="navigation" aria-labelledby="parent-subsection" class="related-links">
+        </nav>
+      <% end -%>
+      <% if @contact.related_links.any? %>
+        <h2 id="other-contacts">Other contacts</h2>
+        <nav role="navigation" aria-labelledby="other-contacts">
+          <ul class="related-links">
             <% @contact.related_links.each do |link| -%>
               <li>
                 <%= link_to link.title, link.web_url %>
               </li>
             <% end -%>
           </ul>
-        <% end -%>
-      </nav>
+        </nav>
+      <% end -%>
     </div>
   </div>
 <% end %>
