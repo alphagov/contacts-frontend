@@ -6,7 +6,7 @@ gem 'rails', '4.1.1'
 gem 'uglifier', '>= 1.3.0'
 
 gem 'plek', '~> 1.8.1'
-gem 'slimmer', '~> 6.0.0'
+gem 'slimmer', '8.1.0'
 
 gem 'airbrake', '4.0.0'
 gem 'logstasher', '0.5.3'
