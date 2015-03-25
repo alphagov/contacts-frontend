@@ -25,6 +25,15 @@ Note that the index page is served by [hmrc-contacts](https://github.com/alphago
 
 `bundle exec rails s -p 3074`
 
+Running using bowler in the VM from cd /var/govuk/development/:
+
+```
+bowl contacts-frontend
+```
+
+If you are using the GDS development virtual machine then the application will be available on the host at http://contacts-frontend.dev.gov.uk/government/organisations/hm-revenue-customs/contact/air-passenger-duty.
+Note: To view the above page, you will need to have replicated data from preview.
+
 ### Running the test suite
 
 `bundle exec rake`
