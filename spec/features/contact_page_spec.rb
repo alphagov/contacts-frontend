@@ -5,7 +5,7 @@ feature "Showing a contact page" do
   it "renders a contact page" do
     path = '/government/organisations/hm-revenue-customs/contact/annual-tax-on-enveloped-dwellings-ated'
 
-    content_store_has_item(path, read_content_store_fixture('hmrc_ated'), 15.minutes.to_i)
+    content_store_has_item(path, read_content_store_fixture('hmrc_ated'))
 
     visit(path)
 
@@ -22,7 +22,7 @@ feature "Showing a contact page" do
     expect_links(".related-links", {
       "Annual tax on enveloped dwellings contact" => "http://www.hmrc.gov.uk/ated/contact.htm",
       "Another contact" => "http://www.hmrc.gov.uk/ated/another.htm"
-    })    
+    })
   end
 
   it "should 404 for a non-existent item in the content-store" do
