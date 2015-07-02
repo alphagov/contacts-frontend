@@ -5,7 +5,7 @@ feature "Showing a contact page" do
   it "renders a contact page" do
     path = '/government/organisations/hm-revenue-customs/contact/annual-tax-on-enveloped-dwellings-ated'
 
-    content_store_has_item(path, read_content_store_fixture('hmrc_ated'), 15.minutes.to_i)
+    content_store_has_item(path, read_content_store_fixture('hmrc_ated'))
 
     visit(path)
 
