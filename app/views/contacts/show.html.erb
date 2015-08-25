@@ -1,3 +1,9 @@
+<% content_for :extra_headers do %>
+  <% if @contact.description.present? %>
+    <meta name='description' content='<%= @contact.description %>' />
+  <% end %>
+<% end %>
+
 <% content_for :breadcrumbs do %>
   <li>
     <%= link_to organisation.title, "/government/organisations/#{organisation.slug}" %>
