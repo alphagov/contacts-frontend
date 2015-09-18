@@ -3,14 +3,14 @@
 Display different contact items for an organisation on GOV.UK, fetched from
 content store.
 
-Contacts are published by [alphagov/hmrc-contacts](https://github.com/alphagov/hmrc-contacts).
+Contacts are published by [alphagov/contacts-admin](https://github.com/alphagov/contacts-admin).
 
 ## Live examples
 
 A contact page:
 - https://www.gov.uk/government/organisations/hm-revenue-customs/contact/alcohol-duties-national-registration-unit
 
-Note that the index page is served by [hmrc-contacts](https://github.com/alphagov/hmrc-contacts):
+Note that the index page is served by [contacts-admin](https://github.com/alphagov/contacts-admin):
 - https://www.gov.uk/government/organisations/hm-revenue-customs/contact
 
 
