@@ -4,12 +4,12 @@
   </div>
 <% end %>
 <div class="vcard">
-  <h3 class="fn"><%= post_address.title %></h3>
-  <span class="street-address"><%= post_address.street_address %></span>
-  <span class="locality"><%= post_address.locality %></span>
-  <span class="region"><%= post_address.region %></span>
-  <span class="postal-code"><%= post_address.postal_code %></span>
+  <div class="fn"><%= post_address.title %></div>
+  <div class="street-address"><%= post_address.street_address %></div>
+  <div class="locality"><%= post_address.locality %></div>
+  <div class="region"><%= post_address.region %></div>
+  <div class="postal-code"><%= post_address.postal_code %></div>
   <% if post_address.world_location.present? %>
-  <span class="country-name"><%= post_address.world_location %></span>
+  <div class="country-name"><%= post_address.world_location %></div>
   <% end %>
 </div>
