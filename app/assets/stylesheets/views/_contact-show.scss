@@ -71,7 +71,7 @@
       &:last-child {
         margin-bottom: $gutter;
       }
-      
+
       h3 {
         @include bold-24;
         margin-bottom: $gutter;
@@ -139,10 +139,6 @@
   .vcard {
     @include core-19;
     margin-bottom: $gutter;
-    span {
-      display: block;
-      margin-bottom: 0;
-    }
   }
 
   .beta-wrapper {
