@@ -101,10 +101,6 @@
                 color: inherit;
               }
 
-              @include media(mobile) {
-                padding: 0;
-                font-size: 24px;
-              }
             }
           }
         }
