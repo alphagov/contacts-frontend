@@ -8,6 +8,7 @@
     <!--[if IE 8]><%= stylesheet_link_tag "application-ie8.css" %><![endif]-->
   <%= csrf_meta_tags %>
   <%= yield :extra_headers %>
+  <%= render partial: 'govuk_component/analytics_meta_tags', locals: { content_item: @content_store.content_item(request.path) } %>
 </head>
 <body class="contacts-body">
 
