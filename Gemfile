@@ -27,5 +27,7 @@ group :development, :test do
   gem 'capybara', '2.3.0'
   gem 'webmock', '~> 1.18.0', :require => false
 
+  gem 'govuk-content-schema-test-helpers', '1.3.0'
+
   gem 'simplecov-rcov', '0.2.3', :require => false
 end
