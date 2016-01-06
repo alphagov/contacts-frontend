@@ -7,11 +7,11 @@ class ContactPresenter
   end
 
   PASS_THROUGH_KEYS = [
-    :title, :details, :web_url
+    :title, :details, :links, :web_url
   ]
 
   PASS_THROUGH_DETAILS_KEYS = [
-    :description, :organisation, :query_response_time,
+    :description, :query_response_time,
     :more_info_contact_form, :more_info_email_address, :more_info_post_address, :more_info_phone_number
   ]
 
@@ -45,7 +45,8 @@ class ContactPresenter
   end
 
   def organisation
-    OpenStruct.new(details['organisation'])
+    # The only organisation in here is HMRC, so call `.first` on the array.
+    links.fetch("organisations", []).map { |organisation| OpenStruct.new(organisation) }.first
   end
 
   def slug
@@ -63,4 +64,3 @@ class ContactPresenter
   end
 
 end
-

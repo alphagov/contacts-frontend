@@ -9,14 +9,14 @@ feature "Showing a contact page" do
 
     visit(path)
 
-    expect(page).to have_title 'Annual Tax on Enveloped Dwellings - Contact HMRC - GOV.UK'
+    expect(page).to have_title 'Annual Tax on Enveloped Dwellings - Contact HM Revenue & Customs - GOV.UK'
     expect(page).to have_selector("meta[name='description'][content='Help about ATED (previously called Annual Residential Property Tax), who needs to submit a return and how to make a payment']", visible: false)
     expect(page).to have_content("Annual Tax on Enveloped Dwellings")
     expect(page.response_headers["Cache-Control"]).to eq("max-age=900, public")
     expect_links("#global-breadcrumb", {
       "Home" => "/",
       "HM Revenue & Customs" => "/government/organisations/hm-revenue-customs",
-      "Contact HMRC" => "/government/organisations/hm-revenue-customs/contact",
+      "Contact HM Revenue & Customs" => "/government/organisations/hm-revenue-customs/contact",
     })
     expect_links(".quick-links", {
       "Annual Tax on Enveloped Dwellings" => "http://www.hmrc.gov.uk/ated/index.htm",
