@@ -42,8 +42,10 @@ describe ContactPresenter do
     expect(contact.email_addresses.length).to eq(0)
   end
 
-  it "should access Organisation as an OpenStruct" do
-    expect(contact.organisation.abbreviation).to eq('HMRC')
-    expect(contact.organisation.slug).to eq('hm-revenue-customs')
+  it "should access Organisations from the links hash (with `base_path` and `content_id`)" do
+    expect(contact.organisation.title).to eq('HM Revenue & Customs')
+    expect(contact.organisation.base_path).to eq('/government/organisations/hm-revenue-customs')
+    expect(contact.organisation.content_id).to eq('6667cce2-e809-4e21-ae09-cb0bdc1ddda3')
+    expect(contact.organisation.abbreviation).to be_nil
   end
 end

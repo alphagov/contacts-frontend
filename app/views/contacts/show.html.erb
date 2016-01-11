@@ -4,14 +4,14 @@
   <% end %>
 <% end %>
 
-<% content_for :page_title, "#{@contact.title} - Contact #{organisation.abbreviation}" %>
+<% content_for :page_title, "#{@contact.title} - Contact #{organisation.title}" %>
 
 <% content_for :breadcrumbs do %>
   <li>
-    <%= link_to organisation.title, "/government/organisations/#{organisation.slug}" %>
+    <%= link_to organisation.title, organisation.base_path %>
   </li>
   <li>
-    <%= link_to "Contact #{organisation.abbreviation}", "/government/organisations/#{organisation.slug}/contact" %>
+    <%= link_to "Contact #{organisation.title}", "#{organisation.base_path}/contact" %>
   </li>
 <% end %>
 
