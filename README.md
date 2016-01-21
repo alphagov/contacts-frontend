@@ -23,7 +23,14 @@ Note that the index page is served by [contacts-admin](https://github.com/alphag
 
 ### Running the application
 
-`bundle exec rails s -p 3074`
+Set the following environment variables to use production `content-store` and `static` apps:
+
+`PLEK_SERVICE_STATIC_URI=assets.digital.cabinet-office.gov.uk`
+`PLEK_SERVICE_CONTENT_STORE_URI=https://www.gov.uk/api`
+
+Run `./startup.sh` from project root directory
+
+### Running the application in the VM
 
 Running using bowler in the VM from cd /var/govuk/development/:
 
