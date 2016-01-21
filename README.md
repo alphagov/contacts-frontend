@@ -21,9 +21,23 @@ Note that the index page is served by [contacts-admin](https://github.com/alphag
 - [alphagov/static](https://github.com/alphagov/staticc) - applies the GOV.UK
   look and feel
 
-### Running the application
+### Running the application outside the GOV.UK VM
 
-`bundle exec rails s -p 3074`
+To start the app, run the following in the terminal:
+
+```bash
+$ PLEK_SERVICE_STATIC_URI=assets.digital.cabinet-office.gov.uk \
+PLEK_SERVICE_CONTENT_STORE_URI=https://www.gov.uk/api \
+./startup.sh
+```
+
+This sets the `content-store` and `static` to use the production apps.
+
+You should then be able to navigate to:
+http://0.0.0.0:3074/government/organisations/hm-revenue-customs/contact/customs-excise-and-vat-fraud-reporting
+
+
+### Running the application in the GOV.UK VM
 
 Running using bowler in the VM from cd /var/govuk/development/:
 
