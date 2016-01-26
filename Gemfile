@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 
 gem 'rails', '4.1.14.1'
-gem 'uglifier', '>= 1.3.0'
+gem 'uglifier', '>= 2.7.2'
 
 gem 'plek', '~> 1.11'
 gem 'slimmer', '9.0.0'
