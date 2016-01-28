@@ -1,7 +1,6 @@
 require 'spec_helper'
 
 feature "Showing a contact page" do
-
   it "renders a contact page" do
     path = '/government/organisations/hm-revenue-customs/contact/annual-tax-on-enveloped-dwellings-ated'
 
@@ -42,7 +41,7 @@ feature "Showing a contact page" do
       expect(found_links).to eq(links.keys)
 
       links.each do |link_text, href|
-        expect(page).to have_link(link_text, :href => href)
+        expect(page).to have_link(link_text, href: href)
       end
     end
   end

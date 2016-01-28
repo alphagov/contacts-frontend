@@ -8,13 +8,13 @@ class ContactsController < ApplicationController
 
   def show
     obj = content_store.content_item(request.path)
-    error_404 and return unless obj
+    error_404 && return unless obj
 
     set_expiry(obj.expires_in)
     @contact = ContactPresenter.new(obj)
   end
 
-  private
+private
 
   def organisation
     @contact.organisation
