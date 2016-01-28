@@ -6,5 +6,5 @@ module ContentStoreHelpers
   end
 end
 
-RSpec.configuration.include GdsApi::TestHelpers::ContentStore, :type => :feature
+RSpec.configuration.include GdsApi::TestHelpers::ContentStore, type: :feature
 RSpec.configuration.include ContentStoreHelpers

@@ -30,4 +30,5 @@ group :development, :test do
   gem 'govuk-content-schema-test-helpers', '1.3.0'
 
   gem 'simplecov-rcov', '0.2.3', :require => false
+  gem 'govuk-lint', '0.5.1'
 end

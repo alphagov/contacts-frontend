@@ -1,8 +1,7 @@
 class ContactPresenter
-
   attr_reader :contact
 
-  def initialize(contact, places = nil)
+  def initialize(contact, _places = nil)
     @contact = contact
   end
 
@@ -34,9 +33,7 @@ class ContactPresenter
 
   PASS_THROUGH_COLLECTIONS_KEYS.each do |key|
     define_method key do
-      if details
-        details[key.to_s].map {|item| OpenStruct.new(item)}
-      end
+      details[key.to_s].map {|item| OpenStruct.new(item)} if details
     end
   end
 
@@ -62,5 +59,4 @@ class ContactPresenter
     date = @contact["updated_at"]
     DateTime.parse(date) if date
   end
-
 end

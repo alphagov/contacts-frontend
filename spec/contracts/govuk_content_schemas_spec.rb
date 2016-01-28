@@ -7,11 +7,11 @@ RSpec.describe "Schema compatibility", type: :request do
   all_examples_for_supported_formats = GovukContentSchemaTestHelpers::Examples.new.get_all_for_formats(%w{
     contact
   })
-  
+
   all_examples_for_supported_formats.each do |example|
     content_item = JSON.parse(example)
 
-    it "can handle a request for #{content_item["base_path"]}" do
+    it "can handle a request for #{content_item['base_path']}" do
       content_store_has_item(content_item['base_path'], content_item)
 
       get content_item['base_path']
