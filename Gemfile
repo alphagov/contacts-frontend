@@ -1,7 +1,6 @@
 source 'https://rubygems.org'
 
-
-gem 'rails', '4.1.14.1'
+gem 'rails', '4.1.15'
 gem 'uglifier', '>= 2.7.2'
 
 gem 'plek', '~> 1.11'
