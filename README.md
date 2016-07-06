@@ -18,7 +18,7 @@ Note that the index page is served by [contacts-admin](https://github.com/alphag
 
 - [alphagov/content-store](https://github.com/alphagov/content-store) - used to
   fetch contacts
-- [alphagov/static](https://github.com/alphagov/staticc) - applies the GOV.UK
+- [alphagov/static](https://github.com/alphagov/static) - applies the GOV.UK
   look and feel
 
 ### Running the application outside the GOV.UK VM
