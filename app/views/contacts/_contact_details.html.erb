@@ -22,6 +22,26 @@
   </div>
 <% end %>
 
+<% if contact.show_webchat? %>
+  <h2 class="details-header">Web chat</h2>
+  <div class="details js-webchat">
+    <div class="description govspeak">
+      <p class="js-webchat-advisers-unavailable hidden">
+        Currently there are no advisers available to service your request, please try again later.
+      </p>
+      <p class="js-webchat-advisers-busy hidden">
+        All our advisers are currently busy, please try again later.
+      </p>
+      <p class="js-webchat-advisers-available">
+        Advisers are available to chat. <a href="#" rel="external" class="js-webchat-open-button">Speak to an adviser now</a>.
+      </p>
+      <h4>Opening times:</h4>
+      <p>8am to 8pm, Monday to Friday<br>8am to 4pm Saturday</p>
+      <p>Closed Sundays, Christmas Day, Boxing Day and New Year’s Day</p>
+    </div>
+  </div>
+<% end %>
+
 <% if contact.phone_numbers.any? %>
   <h2 class="details-header">Phone</h2>
   <div class="details">
@@ -41,4 +61,3 @@
     </div>
   </div>
 <% end %>
-

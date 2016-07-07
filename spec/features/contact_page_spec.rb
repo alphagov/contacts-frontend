@@ -35,6 +35,17 @@ feature "Showing a contact page" do
     expect(page.status_code).to eq(404)
   end
 
+  it "should render web chat" do
+    path = "/government/organisations/hm-revenue-customs/contact/tax-credits-enquiries"
+
+    content_store_has_item(path, read_content_store_fixture("hmrc_tax_credits_enquiries"))
+
+    visit(path)
+
+    expect(page).to have_title "Tax credits: general enquiries"
+    expect(page).to have_content "Web chat"
+  end
+
   def expect_links(selector, links)
     within selector do
       found_links = page.all("li a").map(&:text).map(&:strip)
