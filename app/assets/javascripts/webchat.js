@@ -30,12 +30,14 @@
 
   function Webchat (options) {
     var $el = $(options.$el);
+    var location = options.location || windowLocationPathname;
+
     var $advisersUnavailable = $el.find('.js-webchat-advisers-unavailable');
     var $advisersBusy = $el.find('.js-webchat-advisers-busy');
     var $advisersAvailable = $el.find('.js-webchat-advisers-available');
     var $openButton = $el.find('.js-webchat-open-button');
 
-    var entryPointID = entryPointIDs[windowLocationPathname];
+    var entryPointID = entryPointIDs[location];
     var pollingEnabled = true;
 
     if (entryPointID) {
