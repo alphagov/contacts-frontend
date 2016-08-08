@@ -36,13 +36,13 @@ feature "Showing a contact page" do
   end
 
   it "should render web chat" do
-    path = "/government/organisations/hm-revenue-customs/contact/tax-credits-enquiries"
+    path = "/government/organisations/hm-revenue-customs/contact/child-benefit"
 
-    content_store_has_item(path, read_content_store_fixture("hmrc_tax_credits_enquiries"))
+    content_store_has_item(path, read_content_store_fixture("hmrc_child_benefit"))
 
     visit(path)
 
-    expect(page).to have_title "Tax credits: general enquiries"
+    expect(page).to have_title "Child Benefit: general enquiries"
     expect(page).to have_content "Web chat"
   end
 

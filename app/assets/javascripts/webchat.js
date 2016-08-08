@@ -11,10 +11,12 @@
   // uncomment the additional routes as we obtain them.
   // Whether the actual template is displayed is in `contact_presenter#show_webchat?`.
   var entryPointIDs = {};
+  entryPointIDs['/government/organisations/hm-revenue-customs/contact/child-benefit'] = 1027;
+  entryPointIDs['/government/organisations/hm-revenue-customs/contact/vat-online-services-helpdesk'] = 1028;
   // entryPointIDs['/government/organisations/hm-revenue-customs/contact/national-insurance-numbers'] =;
   // entryPointIDs['/government/organisations/hm-revenue-customs/contact/self-assessment-online-services-helpdesk'] =;
   // entryPointIDs['/government/organisations/hm-revenue-customs/contact/self-assessment'] =;
-  entryPointIDs['/government/organisations/hm-revenue-customs/contact/tax-credits-enquiries'] = 1012;
+  // entryPointIDs['/government/organisations/hm-revenue-customs/contact/tax-credits-enquiries'] = 1012;
   // entryPointIDs['/government/organisations/hm-revenue-customs/contact/vat-enquiries'] =;
 
   var API_URL = 'https://online.hmrc.gov.uk/webchatprod/egain/chat/entrypoint/checkEligibility/';

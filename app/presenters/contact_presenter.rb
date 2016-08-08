@@ -63,10 +63,12 @@ class ContactPresenter
   def show_webchat?
     # These are the routes on which we plan to roll out webchat, in stages.
     whitelisted_paths = [
+      '/government/organisations/hm-revenue-customs/contact/child-benefit',
+      '/government/organisations/hm-revenue-customs/contact/vat-online-services-helpdesk',
       # '/government/organisations/hm-revenue-customs/contact/national-insurance-numbers',
       # '/government/organisations/hm-revenue-customs/contact/self-assessment-online-services-helpdesk',
       # '/government/organisations/hm-revenue-customs/contact/self-assessment',
-      '/government/organisations/hm-revenue-customs/contact/tax-credits-enquiries',
+      # '/government/organisations/hm-revenue-customs/contact/tax-credits-enquiries',
       # '/government/organisations/hm-revenue-customs/contact/vat-enquiries',
     ]
     whitelisted_paths.include?(@contact.base_path)
