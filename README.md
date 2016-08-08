@@ -52,6 +52,12 @@ Note: To view the above page, you will need to have replicated data from preview
 
 `bundle exec rake`
 
+To run the JavaScript tests, make sure you have Static running locally and run:
+
+```
+RAILS_ENV=test bundle exec rake spec:javascript
+```
+
 ## Licence
 
 [MIT License](LICENCE)
