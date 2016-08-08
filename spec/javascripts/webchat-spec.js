@@ -62,6 +62,7 @@ describe('Webchat', function () {
       expect($.ajax).toHaveBeenCalledWith({
         url: CHILD_BENEFIT_API_URL,
         type: 'GET',
+        timeout: jasmine.any(Number),
         success: jasmine.any(Function),
         error: jasmine.any(Function)
       });

@@ -27,6 +27,7 @@
   var CODE_AGENTS_UNAVAILABLE = 1;
   var CODE_AGENTS_BUSY = 2;
   var POLL_INTERVAL = 15 * 1000;
+  var AJAX_TIMEOUT = 5 * 1000;
 
   function Webchat (options) {
     var $el = $(options.$el);
@@ -60,6 +61,7 @@
       $.ajax({
         url: API_URL + entryPointID,
         type: 'GET',
+        timeout: AJAX_TIMEOUT,
         success: handleApiCallSuccess,
         error: handleApiCallError
       });
