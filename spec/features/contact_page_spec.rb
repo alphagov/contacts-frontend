@@ -43,7 +43,7 @@ feature "Showing a contact page" do
     visit(path)
 
     expect(page).to have_title "Child Benefit: general enquiries"
-    expect(page).to have_content "Web chat"
+    expect(page).to have_content "Webchat"
   end
 
   def expect_links(selector, links)

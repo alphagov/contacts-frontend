@@ -36,6 +36,7 @@
     var $advisersUnavailable = $el.find('.js-webchat-advisers-unavailable');
     var $advisersBusy = $el.find('.js-webchat-advisers-busy');
     var $advisersAvailable = $el.find('.js-webchat-advisers-available');
+    var $advisersError = $el.find('.js-webchat-advisers-error');
     var $openButton = $el.find('.js-webchat-open-button');
 
     var entryPointID = entryPointIDs[location];
@@ -71,16 +72,17 @@
       var $xml = $(result);
       var response = parseInt($xml.find('checkEligibility').attr('responseType'), 10);
 
-      if (response === CODE_AGENTS_UNAVAILABLE) { handleAdvisersUnavailable(); }
-      if (response === CODE_AGENTS_BUSY) { handleAdvisersBusy(); }
-      if (response === CODE_AGENTS_AVAILABLE) { handleAdvisersAvailable(); }
+      switch (response) {
+        case CODE_AGENTS_UNAVAILABLE: handleAdvisersUnavailable(); break;
+        case CODE_AGENTS_BUSY:        handleAdvisersBusy(); break;
+        case CODE_AGENTS_AVAILABLE:   handleAdvisersAvailable(); break;
+        default:                      handleApiCallError(); break;
+      }
     }
 
     function handleApiCallError () {
       pollingEnabled = false;
-      handleAdvisersUnavailable();
-
-      GOVUK.analytics.trackEvent('webchat', 'error');
+      handleAdvisersError();
     }
 
     function handleOpenChat (evt) {
@@ -91,11 +93,22 @@
       GOVUK.analytics.trackEvent('webchat', 'accepted');
     }
 
+    function handleAdvisersError () {
+      $advisersError.removeClass('hidden');
+
+      $advisersAvailable.addClass('hidden');
+      $advisersBusy.addClass('hidden');
+      $advisersUnavailable.addClass('hidden');
+
+      GOVUK.analytics.trackEvent('webchat', 'error');
+    }
+
     function handleAdvisersUnavailable () {
       $advisersUnavailable.removeClass('hidden');
 
-      $advisersBusy.addClass('hidden');
       $advisersAvailable.addClass('hidden');
+      $advisersBusy.addClass('hidden');
+      $advisersError.addClass('hidden');
 
       GOVUK.analytics.trackEvent('webchat', 'unavailable');
     }
@@ -105,6 +118,7 @@
 
       $advisersUnavailable.addClass('hidden');
       $advisersAvailable.addClass('hidden');
+      $advisersError.addClass('hidden');
 
       GOVUK.analytics.trackEvent('webchat', 'busy');
     }
@@ -112,8 +126,9 @@
     function handleAdvisersAvailable () {
       $advisersAvailable.removeClass('hidden');
 
-      $advisersUnavailable.addClass('hidden');
       $advisersBusy.addClass('hidden');
+      $advisersError.addClass('hidden');
+      $advisersUnavailable.addClass('hidden');
 
       GOVUK.analytics.trackEvent('webchat', 'offered');
     }

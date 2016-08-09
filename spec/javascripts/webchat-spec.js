@@ -15,13 +15,14 @@ describe('Webchat', function () {
   GOVUK.analytics = { trackEvent: function () {} };
 
   var INSERTION_HOOK = '<div class="js-webchat">' +
+    '<div class="js-webchat-advisers-error">Error</div>' +
     '<div class="js-webchat-advisers-unavailable hidden">Unavailable</div>' +
     '<div class="js-webchat-advisers-busy hidden">Busy</div>' +
-    '<div class="js-webchat-advisers-available">' +
+    '<div class="js-webchat-advisers-available hidden">' +
       'Available, <div class="js-webchat-open-button">chat now</div>' +
     '</div>' +
   '</div>';
-  var $webchat, $advisersUnavailable, $advisersBusy, $advisersAvailable;
+  var $webchat, $advisersUnavailable, $advisersBusy, $advisersAvailable, $advisersError;
 
   var CHILD_BENEFIT_API_URL = 'https://online.hmrc.gov.uk/webchatprod/egain/chat/entrypoint/checkEligibility/' + 1027;
 
@@ -37,6 +38,7 @@ describe('Webchat', function () {
   var xmlResponseAvailable = xmlResponse(0);
   var xmlResponseUnavailable = xmlResponse(1);
   var xmlResponseBusy = xmlResponse(2);
+  var xmlResponseError = '404 not found';
 
   beforeEach(function () {
     setFixtures(INSERTION_HOOK);
@@ -44,6 +46,7 @@ describe('Webchat', function () {
     $advisersUnavailable = $webchat.find('.js-webchat-advisers-unavailable');
     $advisersBusy = $webchat.find('.js-webchat-advisers-busy');
     $advisersAvailable = $webchat.find('.js-webchat-advisers-available');
+    $advisersError = $webchat.find('.js-webchat-advisers-error');
   });
 
   describe('on valid application locations', function () {
@@ -74,8 +77,10 @@ describe('Webchat', function () {
       });
       mount();
       expect($advisersAvailable.hasClass('hidden')).toBe(false);
-      expect($advisersUnavailable.hasClass('hidden')).toBe(true);
+
       expect($advisersBusy.hasClass('hidden')).toBe(true);
+      expect($advisersError.hasClass('hidden')).toBe(true);
+      expect($advisersUnavailable.hasClass('hidden')).toBe(true);
     });
 
     it('should inform user whether advisors are unavailable', function () {
@@ -83,9 +88,11 @@ describe('Webchat', function () {
         options.success(xmlResponseUnavailable);
       });
       mount();
-      expect($advisersAvailable.hasClass('hidden')).toBe(true);
       expect($advisersUnavailable.hasClass('hidden')).toBe(false);
+
+      expect($advisersAvailable.hasClass('hidden')).toBe(true);
       expect($advisersBusy.hasClass('hidden')).toBe(true);
+      expect($advisersError.hasClass('hidden')).toBe(true);
     });
 
     it('should inform user whether advisors are busy', function () {
@@ -93,9 +100,23 @@ describe('Webchat', function () {
         options.success(xmlResponseBusy);
       });
       mount();
-      expect($advisersAvailable.hasClass('hidden')).toBe(true);
-      expect($advisersUnavailable.hasClass('hidden')).toBe(true);
       expect($advisersBusy.hasClass('hidden')).toBe(false);
+
+      expect($advisersAvailable.hasClass('hidden')).toBe(true);
+      expect($advisersError.hasClass('hidden')).toBe(true);
+      expect($advisersUnavailable.hasClass('hidden')).toBe(true);
+    });
+
+    it('should inform user whether there was an error', function () {
+      spyOn($, 'ajax').and.callFake(function (options) {
+        options.success(xmlResponseError);
+      });
+      mount();
+      expect($advisersError.hasClass('hidden')).toBe(false);
+
+      expect($advisersAvailable.hasClass('hidden')).toBe(true);
+      expect($advisersBusy.hasClass('hidden')).toBe(true);
+      expect($advisersUnavailable.hasClass('hidden')).toBe(true);
     });
   });
 
