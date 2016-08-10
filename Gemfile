@@ -30,4 +30,6 @@ group :development, :test do
 
   gem 'simplecov-rcov', '0.2.3', :require => false
   gem 'govuk-lint', '0.5.1'
+
+  gem 'jasmine-rails', '~> 0.10.6'
 end
