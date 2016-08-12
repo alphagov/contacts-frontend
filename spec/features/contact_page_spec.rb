@@ -12,18 +12,12 @@ feature "Showing a contact page" do
     expect(page).to have_selector("meta[name='description'][content='Help about ATED (previously called Annual Residential Property Tax), who needs to submit a return and how to make a payment']", visible: false)
     expect(page).to have_content("Annual Tax on Enveloped Dwellings")
     expect(page.response_headers["Cache-Control"]).to eq("max-age=900, public")
-    expect_links("#global-breadcrumb", {
-      "Home" => "/",
+    expect_links("#global-breadcrumb", "Home" => "/",
       "HM Revenue & Customs" => "/government/organisations/hm-revenue-customs",
-      "Contact HM Revenue & Customs" => "/government/organisations/hm-revenue-customs/contact",
-    })
-    expect_links(".quick-links", {
-      "Annual Tax on Enveloped Dwellings" => "http://www.hmrc.gov.uk/ated/index.htm",
-    })
-    expect_links(".related-links", {
-      "Annual tax on enveloped dwellings contact" => "http://www.hmrc.gov.uk/ated/contact.htm",
-      "Another contact" => "http://www.hmrc.gov.uk/ated/another.htm"
-    })
+      "Contact HM Revenue & Customs" => "/government/organisations/hm-revenue-customs/contact")
+    expect_links(".quick-links", "Annual Tax on Enveloped Dwellings" => "http://www.hmrc.gov.uk/ated/index.htm")
+    expect_links(".related-links", "Annual tax on enveloped dwellings contact" => "http://www.hmrc.gov.uk/ated/contact.htm",
+      "Another contact" => "http://www.hmrc.gov.uk/ated/another.htm")
   end
 
   it "should 404 for a non-existent item in the content-store" do

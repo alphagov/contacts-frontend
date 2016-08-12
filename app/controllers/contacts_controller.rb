@@ -7,11 +7,14 @@ class ContactsController < ApplicationController
   helper_method :organisation
 
   def show
-    obj = content_store.content_item(request.path)
-    error_404 && return unless obj
+    begin
+      obj = content_store.content_item(request.path)
 
-    set_expiry(obj.expires_in)
-    @contact = ContactPresenter.new(obj)
+      set_expiry(obj.expires_in)
+      @contact = ContactPresenter.new(obj)
+    rescue GdsApi::HTTPNotFound
+      error_404 && return
+    end
   end
 
 private
