@@ -7,17 +7,17 @@ class ContactPresenter
 
   PASS_THROUGH_KEYS = [
     :title, :details, :links, :web_url
-  ]
+  ].freeze
 
   PASS_THROUGH_DETAILS_KEYS = [
     :description, :query_response_time,
     :more_info_contact_form, :more_info_email_address, :more_info_post_address, :more_info_phone_number
-  ]
+  ].freeze
 
   PASS_THROUGH_COLLECTIONS_KEYS = [
     :quick_links, :phone_numbers, :email_addresses, :post_addresses,
     :contact_form_links
-  ]
+  ].freeze
 
   PASS_THROUGH_KEYS.each do |key|
     define_method key do
@@ -33,7 +33,7 @@ class ContactPresenter
 
   PASS_THROUGH_COLLECTIONS_KEYS.each do |key|
     define_method key do
-      details[key.to_s].map {|item| OpenStruct.new(item)} if details
+      details[key.to_s].map { |item| OpenStruct.new(item) } if details
     end
   end
 

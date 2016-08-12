@@ -5,5 +5,5 @@ module AssertSelectRoot
 end
 
 RSpec.configure do |config|
-  config.include AssertSelectRoot, :type => :request
+  config.include AssertSelectRoot, type: :request
 end

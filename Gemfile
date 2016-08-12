@@ -27,7 +27,7 @@ group :development, :test do
   gem 'govuk-content-schema-test-helpers', '1.3.0'
 
   gem 'simplecov-rcov', '0.2.3', :require => false
-  gem 'govuk-lint', '0.5.1'
+  gem 'govuk-lint', '1.2.0'
 
   gem 'jasmine-rails', '~> 0.10.6'
   gem 'pry-rails'
