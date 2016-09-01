@@ -13,8 +13,8 @@
   var entryPointIDs = {};
   entryPointIDs['/government/organisations/hm-revenue-customs/contact/child-benefit'] = 1027;
   entryPointIDs['/government/organisations/hm-revenue-customs/contact/vat-online-services-helpdesk'] = 1026;
-  // entryPointIDs['/government/organisations/hm-revenue-customs/contact/national-insurance-numbers'] =;
-  // entryPointIDs['/government/organisations/hm-revenue-customs/contact/self-assessment-online-services-helpdesk'] =;
+  entryPointIDs['/government/organisations/hm-revenue-customs/contact/national-insurance-numbers'] = 1021;
+  entryPointIDs['/government/organisations/hm-revenue-customs/contact/self-assessment-online-services-helpdesk'] = 1003;
   // entryPointIDs['/government/organisations/hm-revenue-customs/contact/self-assessment'] =;
   // entryPointIDs['/government/organisations/hm-revenue-customs/contact/tax-credits-enquiries'] = 1012;
   entryPointIDs['/government/organisations/hm-revenue-customs/contact/vat-enquiries'] = 1028;
