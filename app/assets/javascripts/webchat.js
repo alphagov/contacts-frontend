@@ -15,13 +15,13 @@
   entryPointIDs['/government/organisations/hm-revenue-customs/contact/vat-online-services-helpdesk'] = 1026;
   entryPointIDs['/government/organisations/hm-revenue-customs/contact/national-insurance-numbers'] = 1021;
   entryPointIDs['/government/organisations/hm-revenue-customs/contact/self-assessment-online-services-helpdesk'] = 1003;
-  // entryPointIDs['/government/organisations/hm-revenue-customs/contact/self-assessment'] =;
-  // entryPointIDs['/government/organisations/hm-revenue-customs/contact/tax-credits-enquiries'] = 1012;
+  entryPointIDs['/government/organisations/hm-revenue-customs/contact/self-assessment'] = 1004;
+  entryPointIDs['/government/organisations/hm-revenue-customs/contact/tax-credits-enquiries'] = 1016;
   entryPointIDs['/government/organisations/hm-revenue-customs/contact/vat-enquiries'] = 1028;
 
   var API_URL = 'https://online.hmrc.gov.uk/webchatprod/egain/chat/entrypoint/checkEligibility/';
   var OPEN_CHAT_URL = function (entryPointID) {
-    return 'https://online.hmrc.gov.uk/webchatprod/templates/chat/hmrc6/chat.html?entryPointId=' + entryPointID + '&templateName=hmrc6&languageCode=en&countryCode=US&ver=v11';
+    return 'https://online.hmrc.gov.uk/webchatprod/templates/chat/hmrc7/chat.html?entryPointId=' + entryPointID + '&templateName=hmrc7&languageCode=en&countryCode=US&ver=v11';
   };
   var CODE_AGENTS_AVAILABLE = 0;
   var CODE_AGENTS_UNAVAILABLE = 1;
