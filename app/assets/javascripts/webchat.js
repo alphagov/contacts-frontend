@@ -21,7 +21,7 @@
 
   var API_URL = 'https://online.hmrc.gov.uk/webchatprod/egain/chat/entrypoint/checkEligibility/';
   var OPEN_CHAT_URL = function (entryPointID) {
-    return 'https://online.hmrc.gov.uk/webchatprod/templates/chat/hmrc6/chat.html?entryPointId=' + entryPointID + '&templateName=hmrc6&languageCode=en&countryCode=US&ver=v11';
+    return 'https://online.hmrc.gov.uk/webchatprod/templates/chat/hmrc7/chat.html?entryPointId=' + entryPointID + '&templateName=hmrc7&languageCode=en&countryCode=US&ver=v11';
   };
   var CODE_AGENTS_AVAILABLE = 0;
   var CODE_AGENTS_UNAVAILABLE = 1;
