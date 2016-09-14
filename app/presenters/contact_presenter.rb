@@ -65,8 +65,8 @@ class ContactPresenter
     whitelisted_paths = [
       '/government/organisations/hm-revenue-customs/contact/child-benefit',
       '/government/organisations/hm-revenue-customs/contact/vat-online-services-helpdesk',
-      # '/government/organisations/hm-revenue-customs/contact/national-insurance-numbers',
-      # '/government/organisations/hm-revenue-customs/contact/self-assessment-online-services-helpdesk',
+      '/government/organisations/hm-revenue-customs/contact/national-insurance-numbers',
+      '/government/organisations/hm-revenue-customs/contact/self-assessment-online-services-helpdesk',
       '/government/organisations/hm-revenue-customs/contact/self-assessment',
       '/government/organisations/hm-revenue-customs/contact/tax-credits-enquiries',
       '/government/organisations/hm-revenue-customs/contact/vat-enquiries',
