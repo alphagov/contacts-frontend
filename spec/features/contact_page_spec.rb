@@ -29,6 +29,15 @@ feature "Showing a contact page" do
     expect(page.status_code).to eq(404)
   end
 
+  it "should 410 for a gone item in the content-store" do
+    path = '/government/organisations/hm-revenue-customs/contact/medieval-tax'
+
+    content_store_has_gone_item(path)
+
+    visit(path)
+    expect(page.status_code).to eq(410)
+  end
+
   it "should render web chat" do
     path = "/government/organisations/hm-revenue-customs/contact/child-benefit"
 
