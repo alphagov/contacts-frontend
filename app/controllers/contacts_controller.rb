@@ -14,6 +14,8 @@ class ContactsController < ApplicationController
       @contact = ContactPresenter.new(obj)
     rescue GdsApi::HTTPNotFound
       error_404 && return
+    rescue GdsApi::HTTPGone
+      error_410 && return
     end
   end
 

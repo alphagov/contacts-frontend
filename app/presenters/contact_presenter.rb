@@ -71,6 +71,6 @@ class ContactPresenter
       '/government/organisations/hm-revenue-customs/contact/tax-credits-enquiries',
       '/government/organisations/hm-revenue-customs/contact/vat-enquiries',
     ]
-    whitelisted_paths.include?(@contact.base_path)
+    whitelisted_paths.include?(@contact["base_path"])
   end
 end
