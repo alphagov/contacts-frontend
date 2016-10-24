@@ -64,6 +64,7 @@ class ContactPresenter
     # These are the routes on which we plan to roll out webchat, in stages.
     whitelisted_paths = [
       '/government/organisations/hm-revenue-customs/contact/child-benefit',
+      '/government/organisations/hm-revenue-customs/contact/income-tax-enquiries-for-individuals-pensioners-and-employees',
       '/government/organisations/hm-revenue-customs/contact/vat-online-services-helpdesk',
       '/government/organisations/hm-revenue-customs/contact/national-insurance-numbers',
       '/government/organisations/hm-revenue-customs/contact/self-assessment-online-services-helpdesk',

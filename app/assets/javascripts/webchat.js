@@ -12,6 +12,7 @@
   // Whether the actual template is displayed is in `contact_presenter#show_webchat?`.
   var entryPointIDs = {};
   entryPointIDs['/government/organisations/hm-revenue-customs/contact/child-benefit'] = 1027;
+  entryPointIDs['/government/organisations/hm-revenue-customs/contact/income-tax-enquiries-for-individuals-pensioners-and-employees'] = 1030;
   entryPointIDs['/government/organisations/hm-revenue-customs/contact/vat-online-services-helpdesk'] = 1026;
   entryPointIDs['/government/organisations/hm-revenue-customs/contact/national-insurance-numbers'] = 1021;
   entryPointIDs['/government/organisations/hm-revenue-customs/contact/self-assessment-online-services-helpdesk'] = 1003;
