@@ -10,9 +10,9 @@ Contacts are published by [alphagov/contacts-admin](https://github.com/alphagov/
 A contact page:
 - https://www.gov.uk/government/organisations/hm-revenue-customs/contact/alcohol-duties-national-registration-unit
 
-Note that the index page is served by [contacts-admin](https://github.com/alphagov/contacts-admin):
+Note that the index page is served by
+[finder-frontend](https://github.com/alphagov/finder-frontend):
 - https://www.gov.uk/government/organisations/hm-revenue-customs/contact
-
 
 ### Dependencies
 
