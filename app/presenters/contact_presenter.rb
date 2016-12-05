@@ -71,6 +71,7 @@ class ContactPresenter
       '/government/organisations/hm-revenue-customs/contact/self-assessment',
       '/government/organisations/hm-revenue-customs/contact/tax-credits-enquiries',
       '/government/organisations/hm-revenue-customs/contact/vat-enquiries',
+      '/government/organisations/hm-revenue-customs/contact/customs-international-trade-and-excise-enquiries',
     ]
     whitelisted_paths.include?(@contact["base_path"])
   end
