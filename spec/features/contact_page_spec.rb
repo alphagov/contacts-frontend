@@ -4,6 +4,13 @@ feature "Showing a contact page" do
   it "renders a contact page" do
     path = '/government/organisations/hm-revenue-customs/contact/annual-tax-on-enveloped-dwellings-ated'
 
+    # The expires_in method dynamically generates a value by subtracting
+    # a default number from Time.now. In practice this means that we're not
+    # guaranteed to get 900, it could 899 if the request takes longer than a
+    # second to process.
+    # See https://github.com/alphagov/gds-api-adapters/blob/45fdbf98398f1fab97ac26164db1621d3390aec5/lib/gds_api/response.rb#L57-L67
+    GdsApi::Response.any_instance.stub(expires_in: 900)
+
     content_store_has_item(path, read_content_store_fixture('hmrc_ated'))
 
     visit(path)
