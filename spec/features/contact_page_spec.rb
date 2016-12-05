@@ -18,7 +18,12 @@ feature "Showing a contact page" do
     expect(page).to have_title 'Annual Tax on Enveloped Dwellings - Contact HM Revenue & Customs - GOV.UK'
     expect(page).to have_selector("meta[name='description'][content='Help about ATED (previously called Annual Residential Property Tax), who needs to submit a return and how to make a payment']", visible: false)
     expect(page).to have_content("Annual Tax on Enveloped Dwellings")
+
+    # This assertion fails sometimes because the value it receives is `899` instead of `900`.
+    # It doesn't happen on every build, here's an example failure:
+    # https://ci.dev.publishing.service.gov.uk/job/govuk_contacts-frontend_branches/173/console
     expect(page.response_headers["Cache-Control"]).to eq("max-age=900, public")
+
     expect_links("#global-breadcrumb", "Home" => "/",
       "HM Revenue & Customs" => "/government/organisations/hm-revenue-customs",
       "Contact HM Revenue & Customs" => "/government/organisations/hm-revenue-customs/contact")
