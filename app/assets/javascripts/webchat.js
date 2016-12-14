@@ -20,6 +20,7 @@
   entryPointIDs['/government/organisations/hm-revenue-customs/contact/tax-credits-enquiries'] = 1016;
   entryPointIDs['/government/organisations/hm-revenue-customs/contact/vat-enquiries'] = 1028;
   entryPointIDs['/government/organisations/hm-revenue-customs/contact/customs-international-trade-and-excise-enquiries'] = 1034;
+  entryPointIDs['/government/organisations/hm-revenue-customs/contact/trusts'] = 1036;
 
   var API_URL = 'https://online.hmrc.gov.uk/webchatprod/egain/chat/entrypoint/checkEligibility/';
   var OPEN_CHAT_URL = function (entryPointID) {
