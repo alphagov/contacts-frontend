@@ -1,6 +1,10 @@
 require 'spec_helper'
 
 feature "Showing a contact page" do
+  before do
+    stub_shared_component_locales
+  end
+
   it "renders a contact page" do
     path = '/government/organisations/hm-revenue-customs/contact/annual-tax-on-enveloped-dwellings-ated'
 
@@ -9,7 +13,7 @@ feature "Showing a contact page" do
     # guaranteed to get 900, it could 899 if the request takes longer than a
     # second to process.
     # See https://github.com/alphagov/gds-api-adapters/blob/45fdbf98398f1fab97ac26164db1621d3390aec5/lib/gds_api/response.rb#L57-L67
-    GdsApi::Response.any_instance.stub(expires_in: 900)
+    allow_any_instance_of(GdsApi::Response).to receive(:expires_in).and_return(900)
 
     content_store_has_item(path, read_content_store_fixture('hmrc_ated'))
 
@@ -19,9 +23,15 @@ feature "Showing a contact page" do
     expect(page).to have_selector("meta[name='description'][content='Help about ATED (previously called Annual Residential Property Tax), who needs to submit a return and how to make a payment']", visible: false)
     expect(page).to have_content("Annual Tax on Enveloped Dwellings")
     expect(page.response_headers["Cache-Control"]).to eq("max-age=900, public")
-    expect_links("#global-breadcrumb", "Home" => "/",
-      "HM Revenue & Customs" => "/government/organisations/hm-revenue-customs",
-      "Contact HM Revenue & Customs" => "/government/organisations/hm-revenue-customs/contact")
+
+    expect(page).to have_css(shared_component_selector('breadcrumbs'))
+
+    within(shared_component_selector('breadcrumbs')) do
+      expect(page).to have_content('Home')
+      expect(page).to have_content('HM Revenue & Customs')
+      expect(page).to have_content('Contact HM Revenue & Customs')
+    end
+
     expect_links(".quick-links", "Annual Tax on Enveloped Dwellings" => "http://www.hmrc.gov.uk/ated/index.htm")
     expect_links(".related-links", "Annual tax on enveloped dwellings contact" => "http://www.hmrc.gov.uk/ated/contact.htm",
       "Another contact" => "http://www.hmrc.gov.uk/ated/another.htm")

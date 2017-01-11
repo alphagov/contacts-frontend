@@ -12,6 +12,7 @@ RSpec.describe "Schema compatibility", type: :request do
     content_item = JSON.parse(example)
 
     it "can handle a request for #{content_item['base_path']}" do
+      stub_shared_component_locales
       content_store_has_item(content_item['base_path'], content_item)
 
       get content_item['base_path']

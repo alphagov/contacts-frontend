@@ -6,14 +6,22 @@
 
 <% content_for :page_title, "#{@contact.title} - Contact #{organisation.title}" %>
 
-<% content_for :breadcrumbs do %>
-  <li>
-    <%= link_to organisation.title, organisation.base_path %>
-  </li>
-  <li>
-    <%= link_to "Contact #{organisation.title}", "#{organisation.base_path}/contact" %>
-  </li>
-<% end %>
+<%= render partial: "govuk_component/breadcrumbs", locals: {
+  breadcrumbs: [
+    {
+      title: "Home",
+      url: "/",
+    },
+    {
+      title: organisation.title,
+      url: organisation.base_path,
+    },
+    {
+      title: "Contact #{organisation.title}",
+      url: "#{organisation.base_path}/contact",
+    },
+  ]
+} %>
 
 <div class="grid-row">
 <main id="content" class="contact-show">
