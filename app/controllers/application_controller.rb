@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   include Slimmer::Template
-  include Slimmer::SharedTemplates
+  include Slimmer::GovukComponents
 
   protect_from_forgery with: :exception
 

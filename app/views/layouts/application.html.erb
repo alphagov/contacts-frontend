@@ -11,16 +11,7 @@
   <%= yield :extra_headers %>
 </head>
 <body class="contacts-body">
-
-<div id="global-breadcrumb" class="header-context group">
-  <ol class="group">
-    <li>
-      <%= link_to "Home", '/' %>
-    </li>
-    <%= yield :breadcrumbs %>
-  </ol>
-</div>
-
+<div class="header-context"><!-- Deliberately empty. This will prevent Slimmer from adding the artefact-breadcrumb. --></div>
 <div id="wrapper" class="contacts-wrapper">
   <div class="contacts-content">
     <div id="page" class="<%= content_for?(:page_class) ? yield(:page_class) : '' %>" >
