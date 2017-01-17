@@ -15,21 +15,21 @@ describe ContactPresenter do
   end
 
   it "should handle the absence of links gracefully" do
-    content_store_data = JSON.parse(read_content_store_fixture("hmrc_ated"))
+    content_store_data = read_content_store_fixture("hmrc_ated")
     content_store_data.delete("links")
     presenter = ContactPresenter.new(content_store_data)
     expect(presenter.related_links).to be_empty
   end
 
   it "should handle an empty set of links gracefully" do
-    content_store_data = JSON.parse(read_content_store_fixture("hmrc_ated"))
+    content_store_data = read_content_store_fixture("hmrc_ated")
     content_store_data["links"] = {}
     presenter = ContactPresenter.new(content_store_data)
     expect(presenter.related_links).to be_empty
   end
 
   it "should handle a lack of related links gracefully" do
-    content_store_data = JSON.parse(read_content_store_fixture("hmrc_ated"))
+    content_store_data = read_content_store_fixture("hmrc_ated")
     # Checking for a non-empty set of links that doesn't include related
     content_store_data["links"]["unrelated"] = content_store_data["links"].delete("related")
     presenter = ContactPresenter.new(content_store_data)

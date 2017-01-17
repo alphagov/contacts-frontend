@@ -3,90 +3,6 @@
   "base_path": "/government/organisations/hm-revenue-customs/contact/child-benefit",
   "content_id": "45f4aceb-cc22-4387-844d-8e5c0b1aa630",
   "document_type": "contact",
-  "expanded_links": {
-    "related": [
-      {
-        "analytics_identifier": null,
-        "api_url": "https://www.gov.uk/api/content/government/organisations/hm-revenue-customs/contact/report-a-benefit-thief-online",
-        "base_path": "/government/organisations/hm-revenue-customs/contact/report-a-benefit-thief-online",
-        "content_id": "4e661905-fd41-453a-b953-6877bfa88b45",
-        "description": "If you suspect someone of benefit fraud report them online here",
-        "document_type": "contact",
-        "locale": "en",
-        "public_updated_at": "2015-04-07T11:04:30Z",
-        "schema_name": "contact",
-        "title": "Fraud: report a benefit thief online ",
-        "web_url": "https://www.gov.uk/government/organisations/hm-revenue-customs/contact/report-a-benefit-thief-online",
-        "links": {}
-      },
-      {
-        "analytics_identifier": null,
-        "api_url": "https://www.gov.uk/api/content/government/organisations/hm-revenue-customs/contact/guardians-allowance-helpline",
-        "base_path": "/government/organisations/hm-revenue-customs/contact/guardians-allowance-helpline",
-        "content_id": "77b2e5cd-21d4-4143-a7e8-f70941edd9b5",
-        "description": "Contact HMRC for help with Guardian's Allowance if you're bringing up a child whose parents have died",
-        "document_type": "contact",
-        "locale": "en",
-        "public_updated_at": "2015-09-30T09:58:33Z",
-        "schema_name": "contact",
-        "title": "Guardian's Allowance ",
-        "web_url": "https://www.gov.uk/government/organisations/hm-revenue-customs/contact/guardians-allowance-helpline",
-        "links": {}
-      },
-      {
-        "analytics_identifier": null,
-        "api_url": "https://www.gov.uk/api/content/government/organisations/hm-revenue-customs/contact/welsh-language-helplines",
-        "base_path": "/government/organisations/hm-revenue-customs/contact/welsh-language-helplines",
-        "content_id": "81af275a-f85f-4b1d-8cb2-640c0a043cc5",
-        "description": "Cysylltwch â CThEM am help gyda Threth Incwm, Hunanasesiad, credydau treth, Yswiriant Gwladol, Budd-dal Plant, TWE a mwy",
-        "document_type": "contact",
-        "locale": "en",
-        "public_updated_at": "2015-09-29T10:38:30Z",
-        "schema_name": "contact",
-        "title": "Treth Incwm, Hunanasesiad a mwy",
-        "web_url": "https://www.gov.uk/government/organisations/hm-revenue-customs/contact/welsh-language-helplines",
-        "links": {}
-      }
-    ],
-    "organisations": [
-      {
-        "analytics_identifier": "D25",
-        "api_url": "https://www.gov.uk/api/content/government/organisations/hm-revenue-customs",
-        "base_path": "/government/organisations/hm-revenue-customs",
-        "content_id": "6667cce2-e809-4e21-ae09-cb0bdc1ddda3",
-        "description": null,
-        "document_type": "placeholder_organisation",
-        "locale": "en",
-        "public_updated_at": "2015-05-13T10:09:06Z",
-        "schema_name": "placeholder_organisation",
-        "title": "HM Revenue & Customs",
-        "web_url": "https://www.gov.uk/government/organisations/hm-revenue-customs",
-        "details": {
-          "brand": "hm-revenue-customs",
-          "logo": {
-            "formatted_title": "HM Revenue<br/>&amp; Customs",
-            "crest": "hmrc"
-          }
-        },
-        "links": {}
-      }
-    ],
-    "available_translations": [
-      {
-        "analytics_identifier": null,
-        "api_url": "https://www.gov.uk/api/content/government/organisations/hm-revenue-customs/contact/child-benefit",
-        "base_path": "/government/organisations/hm-revenue-customs/contact/child-benefit",
-        "content_id": "45f4aceb-cc22-4387-844d-8e5c0b1aa630",
-        "description": "Contact HMRC for information about eligibility, claiming and stopping Child Benefit, changing your personal details and making a complaint",
-        "document_type": "contact",
-        "locale": "en",
-        "public_updated_at": "2016-05-12T10:55:03Z",
-        "schema_name": "contact",
-        "title": "Child Benefit: general enquiries",
-        "web_url": "https://www.gov.uk/government/organisations/hm-revenue-customs/contact/child-benefit"
-      }
-    ]
-  },
   "first_published_at": "2016-02-29T09:24:10.000+00:00",
   "format": "contact",
   "locale": "en",
@@ -135,16 +51,7 @@
         "public_updated_at": "2015-09-29T10:38:30.000+00:00",
         "schema_name": "contact",
         "document_type": "contact",
-        "analytics_identifier": null,
-        "links": {
-          "organisations": [
-            "6667cce2-e809-4e21-ae09-cb0bdc1ddda3"
-          ],
-          "related": [
-            "99eb8aad-0c80-4c37-93cb-c462d78b4faa",
-            "16fac069-26d7-4a1f-82a9-684510ce365f"
-          ]
-        }
+        "analytics_identifier": null
       },
       {
         "content_id": "4e661905-fd41-453a-b953-6877bfa88b45",
@@ -157,17 +64,7 @@
         "public_updated_at": "2015-04-07T11:04:30.000+00:00",
         "schema_name": "contact",
         "document_type": "contact",
-        "analytics_identifier": null,
-        "links": {
-          "organisations": [
-            "6667cce2-e809-4e21-ae09-cb0bdc1ddda3"
-          ],
-          "related": [
-            "5a21285a-f386-4820-af81-e6d2a847b223",
-            "e90e2f58-670d-4871-a5c8-71fd9c0b2a7b",
-            "6c50a476-5681-4808-974d-c8e80bcca90d"
-          ]
-        }
+        "analytics_identifier": null
       },
       {
         "content_id": "77b2e5cd-21d4-4143-a7e8-f70941edd9b5",
@@ -180,15 +77,7 @@
         "public_updated_at": "2015-09-30T09:58:33.000+00:00",
         "schema_name": "contact",
         "document_type": "contact",
-        "analytics_identifier": null,
-        "links": {
-          "organisations": [
-            "6667cce2-e809-4e21-ae09-cb0bdc1ddda3"
-          ],
-          "related": [
-            "45f4aceb-cc22-4387-844d-8e5c0b1aa630"
-          ]
-        }
+        "analytics_identifier": null
       }
     ],
     "available_translations": [
@@ -203,17 +92,7 @@
         "public_updated_at": "2016-05-12T10:55:03.000+00:00",
         "schema_name": "contact",
         "document_type": "contact",
-        "analytics_identifier": null,
-        "links": {
-          "organisations": [
-            "6667cce2-e809-4e21-ae09-cb0bdc1ddda3"
-          ],
-          "related": [
-            "81af275a-f85f-4b1d-8cb2-640c0a043cc5",
-            "4e661905-fd41-453a-b953-6877bfa88b45",
-            "77b2e5cd-21d4-4143-a7e8-f70941edd9b5"
-          ]
-        }
+        "analytics_identifier": null
       }
     ]
   },
