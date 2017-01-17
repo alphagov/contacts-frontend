@@ -1,17 +1,11 @@
 require 'spec_helper'
 
 describe ContactPresenter do
-  let(:contact) { ContactPresenter.new(JSON.parse(read_content_store_fixture("hmrc_ated"))) }
+  let(:contact) { ContactPresenter.new(read_content_store_fixture("hmrc_ated")) }
 
   it 'should access detail elements directly' do
     expect(contact.query_response_time).to eq(false)
     expect(contact.title).to eq('Annual Tax on Enveloped Dwellings')
-  end
-
-  it "should access links elements directly" do
-    expect(contact.related_links.first.title).to eq("Annual tax on enveloped dwellings contact")
-    expect(contact.related_links.first.api_url).to eq("http://www.hmrc.gov.uk/api/ated/contact.json")
-    expect(contact.related_links.first.web_url).to eq("http://www.hmrc.gov.uk/ated/contact.htm")
   end
 
   it "should handle the absence of links gracefully" do
