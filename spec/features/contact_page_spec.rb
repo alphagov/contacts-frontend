@@ -32,9 +32,12 @@ feature "Showing a contact page" do
       expect(page).to have_content('Contact HM Revenue & Customs')
     end
 
-    expect_links(".quick-links", "Annual Tax on Enveloped Dwellings" => "http://www.hmrc.gov.uk/ated/index.htm")
-    expect_links(".related-links", "Annual tax on enveloped dwellings contact" => "http://www.hmrc.gov.uk/ated/contact.htm",
-      "Another contact" => "http://www.hmrc.gov.uk/ated/another.htm")
+    expect(page).to have_css(shared_component_selector('related_items'))
+
+    within(shared_component_selector('related_items')) do
+      expect(page).to have_content("Annual Tax on Enveloped Dwellings")
+      expect(page).to have_content("Annual tax on enveloped dwellings contact")
+    end
   end
 
   it "should 404 for a non-existent item in the content-store" do
@@ -64,16 +67,5 @@ feature "Showing a contact page" do
 
     expect(page).to have_title "Child Benefit: general enquiries"
     expect(page).to have_content "Webchat"
-  end
-
-  def expect_links(selector, links)
-    within selector do
-      found_links = page.all("li a").map(&:text).map(&:strip)
-      expect(found_links).to eq(links.keys)
-
-      links.each do |link_text, href|
-        expect(page).to have_link(link_text, href: href)
-      end
-    end
   end
 end

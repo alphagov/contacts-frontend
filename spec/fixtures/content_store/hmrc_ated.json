@@ -6,28 +6,29 @@
   "need_ids": [
 
   ],
-  "updated_at": null,
+  "updated_at": "2014-04-03T14:53:09+00:00",
   "public_updated_at": "2014-04-03T14:53:09+00:00",
   "links": {
     "related" : [
       {
+        "content_id": "3f50607d-532b-4e54-9c04-9fbb5a7809d6",
+        "locale": "en",
         "title": "Annual tax on enveloped dwellings contact",
-        "api_url": "http://www.hmrc.gov.uk/api/ated/contact.json",
-        "web_url": "http://www.hmrc.gov.uk/ated/contact.htm"
+        "base_path": "/contact-1"
       },
       {
+        "content_id": "871c742d-e055-4df0-8392-eb329748c458",
+        "locale": "en",
         "title": "Another contact",
-        "api_url": "http://www.hmrc.gov.uk/api/ated/another.json",
-        "web_url": "http://www.hmrc.gov.uk/ated/another.htm"
+        "base_path": "/contact-2"
       }
     ],
     "organisations": [
       {
         "content_id": "6667cce2-e809-4e21-ae09-cb0bdc1ddda3",
+        "locale": "en",
         "title": "HM Revenue & Customs",
         "base_path": "/government/organisations/hm-revenue-customs",
-        "api_url": "https://www.gov.uk/api/content/government/organisations/hm-revenue-customs",
-        "web_url": "https://www.gov.uk/government/organisations/hm-revenue-customs",
         "locale": "en"
       }
     ]
@@ -36,14 +37,6 @@
     "slug": "annual-tax-on-enveloped-dwellings-ated",
     "title": "Annual Tax on Enveloped Dwellings",
     "description": "Help about ATED (previously called Annual Residential Property Tax), who needs to submit a return and how to make a payment",
-    "organisation": {
-      "id": 1,
-      "title": "HM Revenue & Customs",
-      "format": "Non-ministerial department",
-      "slug": "hm-revenue-customs",
-      "abbreviation": "HMRC",
-      "govuk_status": "live"
-    },
     "quick_links": [
       {
         "title": "Annual Tax on Enveloped Dwellings ",
@@ -51,43 +44,6 @@
       }
     ],
     "query_response_time": false,
-    "contact_groups": [
-      {
-        "title": "Stamp Taxes ",
-        "organisation": {
-          "id": 1,
-          "title": "HM Revenue & Customs",
-          "format": "Non-ministerial department",
-          "slug": "hm-revenue-customs",
-          "abbreviation": "HMRC",
-          "govuk_status": "live"
-        },
-        "description": "<p>Stamp taxes payable on land and property</p>",
-        "contacts": [
-          {
-            "description": "<p>Online form and telephone number for ordering Stamp Duty Land Tax forms and payslips</p>"
-          },
-          {
-            "description": "<p>Address and phone number for enquiries about stamp taxes payable on land and property and Stamp Duty Reserve Tax </p>"
-          },
-          {
-            "description": "<p>Address and phone numbers for Stamp Duty enquiries about shares and land</p>"
-          },
-          {
-            "description": "<p>Information for solicitors dealing with Scottish land transactions</p>"
-          },
-          {
-            "description": "<p>Telephone number for technical help with filing stamp tax returns online</p>"
-          },
-          {
-            "description": "<p>Addresses for posting payments, returns and writing to HMRC regarding Stamp Duty Land Tax</p>"
-          },
-          {
-            "description": "<p>Help about ATED (previously called Annual Residential Property Tax), who needs to submit a return and how to make a payment</p>"
-          }
-        ]
-      }
-    ],
     "contact_form_links": [
 
     ],

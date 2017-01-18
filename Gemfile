@@ -25,6 +25,7 @@ group :development, :test do
   gem 'webmock', '~> 1.18.0', :require => false
 
   gem 'govuk-content-schema-test-helpers', '1.3.0'
+  gem 'govuk_schemas', '~> 2.1'
 
   gem 'simplecov-rcov', '0.2.3', :require => false
   gem 'govuk-lint', '1.2.0'

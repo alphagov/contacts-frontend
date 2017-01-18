@@ -41,33 +41,7 @@
     <p class="response"><%= link_to "Find out when to expect a response to your query", "http://www.hmrc.gov.uk/tools/progress-tool/index.htm" %></p>
   <% end -%>
 </main>
-<% if @contact.quick_links.any? or @contact.related_links.any? %>
-  <div class="related-container">
-    <div class="related" id="related">
-      <% if @contact.quick_links.any? %>
-        <h2 id="elsewhwere-on-govuk">Elsewhere on GOV.UK</h2>
-        <nav role="navigation" labeled-by="elsewhere-on-govuk">
-          <ul class="quick-links">
-            <% @contact.quick_links.each do |link| -%>
-              <li>
-                <%= link_to link.title, link.url %>
-              </li>
-            <% end -%>
-          </ul>
-        </nav>
-      <% end -%>
-      <% if @contact.related_links.any? %>
-        <h2 id="other-contacts">Other contacts</h2>
-        <nav role="navigation" aria-labelledby="other-contacts">
-          <ul class="related-links">
-            <% @contact.related_links.each do |link| -%>
-              <li>
-                <%= link_to link.title, link.web_url %>
-              </li>
-            <% end -%>
-          </ul>
-        </nav>
-      <% end -%>
-    </div>
-  </div>
-<% end %>
+
+<div class="related-container">
+  <%= render partial: "govuk_component/related_items", locals: RelatedItems.new(@contact).payload %>
+</div>

@@ -52,7 +52,7 @@ class ContactPresenter
 
   def related_links
     return [] unless contact["links"]
-    contact["links"].fetch("related", []).map { |link| OpenStruct.new(link) }
+    contact.to_hash.dig("links", "related").to_a
   end
 
   def updated_at
