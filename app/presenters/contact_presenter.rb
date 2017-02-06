@@ -73,6 +73,8 @@ class ContactPresenter
       '/government/organisations/hm-revenue-customs/contact/vat-enquiries',
       '/government/organisations/hm-revenue-customs/contact/customs-international-trade-and-excise-enquiries',
       '/government/organisations/hm-revenue-customs/contact/trusts',
+      '/government/organisations/hm-revenue-customs/contact/employer-enquiries',
+      '/government/organisations/hm-revenue-customs/contact/construction-industry-scheme',
     ]
     whitelisted_paths.include?(@contact["base_path"])
   end

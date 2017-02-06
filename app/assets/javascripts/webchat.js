@@ -21,6 +21,8 @@
   entryPointIDs['/government/organisations/hm-revenue-customs/contact/vat-enquiries'] = 1028;
   entryPointIDs['/government/organisations/hm-revenue-customs/contact/customs-international-trade-and-excise-enquiries'] = 1034;
   entryPointIDs['/government/organisations/hm-revenue-customs/contact/trusts'] = 1036;
+  entryPointIDs['/government/organisations/hm-revenue-customs/contact/employer-enquiries'] = 1023
+  entryPointIDs['/government/organisations/hm-revenue-customs/contact/construction-industry-scheme'] = 1048
 
   var API_URL = 'https://online.hmrc.gov.uk/webchatprod/egain/chat/entrypoint/checkEligibility/';
   var OPEN_CHAT_URL = function (entryPointID) {
