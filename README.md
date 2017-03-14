@@ -1,5 +1,7 @@
 # Contacts Frontend
 
+**Contacts are now rendered by [government-frontend](https://github.com/alphagov/government-frontend). This application is being retired.**
+
 Display different contact items for an organisation on GOV.UK, fetched from
 content store.
 
